@@ -1,7 +1,7 @@
 {
   "name": "react-uxp-spectrum",
   "version": "0.1.0",
-  "description": "UXP Spectrum Web Components for React",
+  "description": "Adobe UXP Spectrum Web Components for React",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
