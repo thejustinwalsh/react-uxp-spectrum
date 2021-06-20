@@ -40,12 +40,15 @@ namespace Spectrum {
     | 'ui:TripleGripper';
 
   export type IconSize = 'xxs' | 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl';
+
+  export type IconSlot = 'icon';
 }
 
 type Props = {
   className?: string;
   name?: Spectrum.IconName;
   size?: Spectrum.IconSize;
+  slot?: Spectrum.IconSlot;
 };
 
 declare global {
@@ -56,6 +59,7 @@ declare global {
         class?: string;
         name?: Spectrum.IconName;
         size?: Spectrum.IconSize;
+        slot?: Spectrum.IconSlot;
       };
     }
   }
@@ -63,7 +67,12 @@ declare global {
 
 export default function Icon(props: Props) {
   return (
-    <sp-icon class={props?.className} name={props?.name} size={props?.size}>
+    <sp-icon
+      class={props?.className}
+      name={props.name}
+      size={props.size}
+      slot={props.slot}
+    >
       {undefined}
     </sp-icon>
   );

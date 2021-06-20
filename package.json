@@ -20,9 +20,9 @@
   "author": "Justin Walsh",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/thejustinwalsh/react-uxp/issues"
+    "url": "https://github.com/thejustinwalsh/react-uxp-spectrum/issues"
   },
-  "homepage": "https://github.com/thejustinwalsh/react-uxp#readme",
+  "homepage": "https://github.com/thejustinwalsh/react-uxp-spectrum#readme",
   "peerDependencies": {
     "react": "^17.0.2"
   },
