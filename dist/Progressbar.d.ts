@@ -1,10 +1,17 @@
 import React from 'react';
 declare namespace Spectrum {
     type ProgressbarVariant = 'overBackground';
+    type ProgressbarSize = 'small';
 }
 declare type Props = {
     children?: React.ReactNode;
     className?: string;
+    min?: number;
+    max: number;
+    size?: Spectrum.ProgressbarSize;
+    showValue?: boolean;
+    value: number;
+    valueLabel?: string;
     variant?: Spectrum.ProgressbarVariant;
 };
 declare global {
@@ -13,6 +20,12 @@ declare global {
             'sp-progressbar': {
                 children?: React.ReactNode;
                 class?: string;
+                min?: number;
+                max: number;
+                size?: Spectrum.ProgressbarSize;
+                showValue?: boolean;
+                value: number;
+                valueLabel?: string;
                 variant?: Spectrum.ProgressbarVariant;
             };
         }
