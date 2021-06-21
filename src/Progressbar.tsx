@@ -26,9 +26,9 @@ declare global {
         min?: number;
         max: number;
         size?: Spectrum.ProgressbarSize;
-        showValue?: boolean;
+        'show-value'?: boolean;
         value: number;
-        valueLabel?: string;
+        'value-label'?: string;
         variant?: Spectrum.ProgressbarVariant;
       };
     }
@@ -42,9 +42,9 @@ export default function Progressbar(props: Props) {
       min={props.min}
       max={props.max}
       size={props.size}
-      showValue={props.showValue || undefined}
+      show-value={props.showValue || undefined}
       value={props.value}
-      valueLabel={props.valueLabel}
+      value-label={props.valueLabel}
       variant={props.variant}
     >
       {props.children}

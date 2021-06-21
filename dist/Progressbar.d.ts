@@ -23,9 +23,9 @@ declare global {
                 min?: number;
                 max: number;
                 size?: Spectrum.ProgressbarSize;
-                showValue?: boolean;
+                'show-value'?: boolean;
                 value: number;
-                valueLabel?: string;
+                'value-label'?: string;
                 variant?: Spectrum.ProgressbarVariant;
             };
         }
