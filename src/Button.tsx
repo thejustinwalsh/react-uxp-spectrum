@@ -7,11 +7,14 @@ namespace Spectrum {
     | 'secondary'
     | 'warning'
     | 'overBackground';
+  export interface ButtonEvent extends globalThis.Event {
+    readonly target: (EventTarget & unknown) | null;
+  }
 }
 
 type Props = {
   children?: React.ReactNode;
-  onClick?: (e: MouseEvent) => void;
+  onClick?: (e: Spectrum.ButtonEvent) => void;
   className?: string;
   disabled?: boolean;
   quiet?: boolean;
@@ -35,7 +38,8 @@ declare global {
 
 export default function Button(props: Props) {
   const ref = useRef<HTMLElement>(null);
-  const dispatchClick = (e: MouseEvent) => props.onClick?.(e);
+  const dispatchClick = (e: Event) =>
+    props.onClick?.(e as Spectrum.ButtonEvent);
 
   useEffect(() => {
     ref.current?.addEventListener('click', dispatchClick);

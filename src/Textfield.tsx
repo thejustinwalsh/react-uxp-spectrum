@@ -2,11 +2,15 @@ import React, { useEffect, useRef } from 'react';
 
 namespace Spectrum {
   export type TextfieldType = 'number' | 'password' | 'search';
+  export interface TextfieldEvent extends globalThis.Event {
+    readonly target: (EventTarget & { value: string }) | null;
+  }
 }
 
 type Props = {
   children?: React.ReactNode;
-  onInput?: (e: Event) => void;
+  onChange?: (e: Spectrum.TextfieldEvent) => void;
+  onInput?: (e: Spectrum.TextfieldEvent) => void;
   className?: string;
   disabled?: boolean;
   invalid?: boolean;
@@ -47,11 +51,16 @@ declare global {
  */
 export default function Textfield(props: Props) {
   const ref = useRef<HTMLElement>(null);
-  const dispatchInput = (e: Event) => props.onInput?.(e);
+  const dispatchChange = (e: Event) =>
+    props.onChange?.(e as Spectrum.TextfieldEvent);
+  const dispatchInput = (e: Event) =>
+    props.onInput?.(e as Spectrum.TextfieldEvent);
 
   useEffect(() => {
+    ref.current?.addEventListener('change', dispatchChange);
     ref.current?.addEventListener('input', dispatchInput);
     return () => {
+      ref.current?.removeEventListener('change', dispatchChange);
       ref.current?.removeEventListener('input', dispatchInput);
     };
   }, [ref]);

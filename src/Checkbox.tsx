@@ -1,9 +1,15 @@
 import React, { useEffect, useRef } from 'react';
 
+namespace Spectrum {
+  export interface CheckboxEvent extends globalThis.Event {
+    readonly target: (EventTarget & { checked: boolean }) | null;
+  }
+}
+
 type Props = {
   children?: React.ReactNode;
-  onChange?: (e: Event) => void;
-  onInput?: (e: Event) => void;
+  onChange?: (e: Spectrum.CheckboxEvent) => void;
+  onInput?: (e: Spectrum.CheckboxEvent) => void;
   className?: string;
   checked?: boolean;
   disabled?: boolean;
@@ -29,8 +35,10 @@ declare global {
 
 export default function Checkbox(props: Props) {
   const ref = useRef<HTMLElement>(null);
-  const dispatchChange = (e: Event) => props.onChange?.(e);
-  const dispatchInput = (e: Event) => props.onInput?.(e);
+  const dispatchChange = (e: Event) =>
+    props.onChange?.(e as Spectrum.CheckboxEvent);
+  const dispatchInput = (e: Event) =>
+    props.onInput?.(e as Spectrum.CheckboxEvent);
 
   useEffect(() => {
     ref.current?.addEventListener('change', dispatchChange);

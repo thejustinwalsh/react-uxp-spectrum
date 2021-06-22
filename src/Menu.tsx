@@ -2,13 +2,17 @@ import React, { useEffect, useRef } from 'react';
 
 namespace Spectrum {
   export type MenuSlot = 'options';
+  export interface MenuEvent extends globalThis.Event {
+    readonly target: (EventTarget & { selectedIndex: number }) | null;
+  }
 }
 
 type Props = {
   children?: React.ReactNode;
-  onChange?: (e: Event) => void;
+  onChange?: (e: Spectrum.MenuEvent) => void;
   className?: string;
   slot?: Spectrum.MenuSlot;
+  selectedIndex?: number;
 };
 
 declare global {
@@ -19,6 +23,7 @@ declare global {
         ref?: React.RefObject<HTMLElement>;
         class?: string;
         slot?: Spectrum.MenuSlot;
+        selectedIndex?: number;
       };
     }
   }
@@ -42,7 +47,8 @@ declare global {
  */
 export default function Menu(props: Props) {
   const ref = useRef<HTMLElement>(null);
-  const dispatchChange = (e: Event) => props.onChange?.(e);
+  const dispatchChange = (e: Event) =>
+    props.onChange?.(e as Spectrum.MenuEvent);
 
   useEffect(() => {
     ref.current?.addEventListener('change', dispatchChange);
@@ -56,6 +62,7 @@ export default function Menu(props: Props) {
       ref={ref}
       class={props.className}
       slot={props.slot === 'options' ? 'options' : undefined}
+      selectedIndex={props.selectedIndex}
     >
       {props.children}
     </sp-menu>

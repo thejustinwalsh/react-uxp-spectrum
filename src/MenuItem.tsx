@@ -1,8 +1,14 @@
 import React, { useEffect, useRef } from 'react';
 
+namespace Spectrum {
+  export interface MenuItemEvent extends globalThis.Event {
+    readonly target: (EventTarget & { selected: boolean }) | null;
+  }
+}
+
 type Props = {
   children?: React.ReactNode;
-  onClick?: (e: MouseEvent) => void;
+  onClick?: (e: Spectrum.MenuItemEvent) => void;
   className?: string;
   disabled?: boolean;
   selected?: boolean;
@@ -24,7 +30,8 @@ declare global {
 
 export default function MenuItem(props: Props) {
   const ref = useRef<HTMLElement>(null);
-  const dispatchClick = (e: MouseEvent) => props.onClick?.(e);
+  const dispatchClick = (e: Event) =>
+    props.onClick?.(e as Spectrum.MenuItemEvent);
 
   useEffect(() => {
     ref.current?.addEventListener('click', dispatchClick);

@@ -1,18 +1,22 @@
 import React, { useEffect, useRef } from 'react';
 
 namespace Spectrum {
-  export type TextfieldType = 'number' | 'password' | 'search';
+  export type TextareaType = 'number' | 'password' | 'search';
+  export interface TextareaEvent extends globalThis.Event {
+    readonly target: (EventTarget & { value: string }) | null;
+  }
 }
 
 type Props = {
   children?: React.ReactNode;
-  onInput?: (e: Event) => void;
+  onChange?: (e: Spectrum.TextareaEvent) => void;
+  onInput?: (e: Spectrum.TextareaEvent) => void;
   className?: string;
   disabled?: boolean;
   invalid?: boolean;
   placeholder?: string;
   quiet?: boolean;
-  type?: Spectrum.TextfieldType;
+  type?: Spectrum.TextareaType;
   valid?: boolean;
   value?: string;
 };
@@ -28,7 +32,7 @@ declare global {
         invalid?: boolean;
         placeholder?: string;
         quiet?: boolean;
-        type?: Spectrum.TextfieldType;
+        type?: Spectrum.TextareaType;
         valid?: boolean;
         value?: string;
       };
@@ -47,11 +51,16 @@ declare global {
  */
 export default function Textarea(props: Props) {
   const ref = useRef<HTMLElement>(null);
-  const dispatchInput = (e: Event) => props.onInput?.(e);
+  const dispatchChange = (e: Event) =>
+    props.onChange?.(e as Spectrum.TextareaEvent);
+  const dispatchInput = (e: Event) =>
+    props.onInput?.(e as Spectrum.TextareaEvent);
 
   useEffect(() => {
+    ref.current?.addEventListener('change', dispatchChange);
     ref.current?.addEventListener('input', dispatchInput);
     return () => {
+      ref.current?.removeEventListener('change', dispatchChange);
       ref.current?.removeEventListener('input', dispatchInput);
     };
   }, [ref]);

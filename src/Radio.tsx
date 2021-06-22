@@ -1,8 +1,14 @@
 import React, { useEffect, useRef } from 'react';
 
+namespace Spectrum {
+  export interface RadioEvent extends globalThis.Event {
+    readonly target: (EventTarget & { value: string }) | null;
+  }
+}
+
 type Props = {
   children?: React.ReactNode;
-  onInput?: (e: Event) => void;
+  onClick?: (e: Spectrum.RadioEvent) => void;
   className?: string;
   checked?: boolean;
   disabled?: boolean;
@@ -30,7 +36,7 @@ declare global {
 
 export default function Radio(props: Props) {
   const ref = useRef<HTMLElement>(null);
-  const dispatchInput = (e: Event) => props.onInput?.(e);
+  const dispatchInput = (e: Event) => props.onClick?.(e as Spectrum.RadioEvent);
 
   useEffect(() => {
     ref.current?.addEventListener('input', dispatchInput);

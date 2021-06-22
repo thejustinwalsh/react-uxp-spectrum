@@ -1,13 +1,20 @@
 import React, { useEffect, useRef } from 'react';
 
+namespace Spectrum {
+  export interface DropdownEvent extends globalThis.Event {
+    readonly target: (EventTarget & { selectedIndex: number }) | null;
+  }
+}
+
 type Props = {
   children?: React.ReactNode;
-  onChange?: (e: Event) => void;
+  onChange?: (e: Spectrum.DropdownEvent) => void;
   className?: string;
   disabled?: boolean;
   invalid?: boolean;
   quiet?: boolean;
   placeholder?: string;
+  selectedIndex?: number;
 };
 
 declare global {
@@ -21,6 +28,7 @@ declare global {
         invalid?: boolean;
         quiet?: boolean;
         placeholder?: string;
+        selectedIndex?: number;
       };
     }
   }
@@ -44,7 +52,8 @@ declare global {
  */
 export default function Dropdown(props: Props) {
   const ref = useRef<HTMLElement>(null);
-  const dispatchChange = (e: Event) => props.onChange?.(e);
+  const dispatchChange = (e: Event) =>
+    props.onChange?.(e as Spectrum.DropdownEvent);
 
   useEffect(() => {
     ref.current?.addEventListener('change', dispatchChange);
@@ -61,6 +70,7 @@ export default function Dropdown(props: Props) {
       invalid={props.invalid || undefined}
       quiet={props.quiet || undefined}
       placeholder={props.placeholder}
+      selectedIndex={props.selectedIndex}
     >
       {props?.children}
     </sp-dropdown>
