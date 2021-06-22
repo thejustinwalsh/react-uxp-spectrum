@@ -18,7 +18,7 @@ declare global {
         children?: React.ReactNode;
         class?: string;
         slot?: Spectrum.LabelSlot;
-        isRequired?: boolean;
+        isrequired?: boolean;
       };
     }
   }
@@ -29,7 +29,7 @@ export default function Label(props: Props) {
     <sp-label
       class={props?.className}
       slot={props?.slot || undefined}
-      isRequired={props?.isRequired || undefined}
+      isrequired={props?.isRequired || undefined}
     >
       {props?.children}
     </sp-label>
