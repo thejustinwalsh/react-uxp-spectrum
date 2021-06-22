@@ -1,10 +1,13 @@
 import React from 'react';
 declare namespace Spectrum {
     type ButtonVariant = 'cta' | 'primary' | 'secondary' | 'warning' | 'overBackground';
+    interface ButtonEvent extends globalThis.Event {
+        readonly target: (EventTarget & unknown) | null;
+    }
 }
 declare type Props = {
     children?: React.ReactNode;
-    onClick?: (e: MouseEvent) => void;
+    onClick?: (e: Spectrum.ButtonEvent) => void;
     className?: string;
     disabled?: boolean;
     quiet?: boolean;

@@ -15,7 +15,7 @@ declare global {
                 children?: React.ReactNode;
                 class?: string;
                 slot?: Spectrum.LabelSlot;
-                isRequired?: boolean;
+                isrequired?: boolean;
             };
         }
     }

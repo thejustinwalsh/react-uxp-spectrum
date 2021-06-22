@@ -1,8 +1,15 @@
 import React from 'react';
+declare namespace Spectrum {
+    interface CheckboxEvent extends globalThis.Event {
+        readonly target: (EventTarget & {
+            checked: boolean;
+        }) | null;
+    }
+}
 declare type Props = {
     children?: React.ReactNode;
-    onChange?: (e: Event) => void;
-    onInput?: (e: Event) => void;
+    onChange?: (e: Spectrum.CheckboxEvent) => void;
+    onInput?: (e: Spectrum.CheckboxEvent) => void;
     className?: string;
     checked?: boolean;
     disabled?: boolean;

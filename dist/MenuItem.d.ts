@@ -1,7 +1,14 @@
 import React from 'react';
+declare namespace Spectrum {
+    interface MenuItemEvent extends globalThis.Event {
+        readonly target: (EventTarget & {
+            selected: boolean;
+        }) | null;
+    }
+}
 declare type Props = {
     children?: React.ReactNode;
-    onClick?: (e: MouseEvent) => void;
+    onClick?: (e: Spectrum.MenuItemEvent) => void;
     className?: string;
     disabled?: boolean;
     selected?: boolean;

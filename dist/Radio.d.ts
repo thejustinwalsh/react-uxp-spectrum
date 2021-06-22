@@ -1,7 +1,14 @@
 import React from 'react';
+declare namespace Spectrum {
+    interface RadioEvent extends globalThis.Event {
+        readonly target: (EventTarget & {
+            value: string;
+        }) | null;
+    }
+}
 declare type Props = {
     children?: React.ReactNode;
-    onInput?: (e: Event) => void;
+    onClick?: (e: Spectrum.RadioEvent) => void;
     className?: string;
     checked?: boolean;
     disabled?: boolean;

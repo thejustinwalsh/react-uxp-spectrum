@@ -1,9 +1,17 @@
 import React from 'react';
+declare namespace Spectrum {
+    interface RadioGroupEvent extends globalThis.Event {
+        readonly target: (EventTarget & {
+            value: string;
+        }) | null;
+    }
+}
 declare type Props = {
     children?: React.ReactNode;
-    onChange?: (e: Event) => void;
+    onChange?: (e: Spectrum.RadioGroupEvent) => void;
     className?: string;
     column?: boolean;
+    value?: string;
 };
 declare global {
     namespace JSX {
@@ -13,6 +21,7 @@ declare global {
                 ref?: React.RefObject<HTMLElement>;
                 class?: string;
                 column?: boolean;
+                value?: string;
             };
         }
     }

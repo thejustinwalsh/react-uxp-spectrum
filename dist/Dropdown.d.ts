@@ -1,12 +1,20 @@
 import React from 'react';
+declare namespace Spectrum {
+    interface DropdownEvent extends globalThis.Event {
+        readonly target: (EventTarget & {
+            selectedIndex: number;
+        }) | null;
+    }
+}
 declare type Props = {
     children?: React.ReactNode;
-    onChange?: (e: Event) => void;
+    onChange?: (e: Spectrum.DropdownEvent) => void;
     className?: string;
     disabled?: boolean;
     invalid?: boolean;
     quiet?: boolean;
     placeholder?: string;
+    selectedIndex?: number;
 };
 declare global {
     namespace JSX {
@@ -19,6 +27,7 @@ declare global {
                 invalid?: boolean;
                 quiet?: boolean;
                 placeholder?: string;
+                selectedIndex?: number;
             };
         }
     }

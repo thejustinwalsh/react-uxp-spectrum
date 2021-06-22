@@ -1,12 +1,18 @@
 import React from 'react';
 declare namespace Spectrum {
     type MenuSlot = 'options';
+    interface MenuEvent extends globalThis.Event {
+        readonly target: (EventTarget & {
+            selectedIndex: number;
+        }) | null;
+    }
 }
 declare type Props = {
     children?: React.ReactNode;
-    onChange?: (e: Event) => void;
+    onChange?: (e: Spectrum.MenuEvent) => void;
     className?: string;
     slot?: Spectrum.MenuSlot;
+    selectedIndex?: number;
 };
 declare global {
     namespace JSX {
@@ -16,6 +22,7 @@ declare global {
                 ref?: React.RefObject<HTMLElement>;
                 class?: string;
                 slot?: Spectrum.MenuSlot;
+                selectedIndex?: number;
             };
         }
     }

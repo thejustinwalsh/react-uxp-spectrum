@@ -26,6 +26,6 @@ export default function Menu(props) {
             (_a = ref.current) === null || _a === void 0 ? void 0 : _a.removeEventListener('change', dispatchChange);
         };
     }, [ref]);
-    return (React.createElement("sp-menu", { ref: ref, "class": props.className, slot: props.slot === 'options' ? 'options' : undefined }, props.children));
+    return (React.createElement("sp-menu", { ref: ref, "class": props.className, slot: props.slot === 'options' ? 'options' : undefined, selectedIndex: props.selectedIndex }, props.children));
 }
 //# sourceMappingURL=Menu.js.map

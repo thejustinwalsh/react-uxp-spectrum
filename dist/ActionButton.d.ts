@@ -1,7 +1,12 @@
 import React from 'react';
+declare namespace Spectrum {
+    interface ActionButtonEvent extends globalThis.Event {
+        readonly target: (EventTarget & unknown) | null;
+    }
+}
 declare type Props = {
     children?: React.ReactNode;
-    onClick?: (e: MouseEvent) => void;
+    onClick?: (e: Spectrum.ActionButtonEvent) => void;
     className?: string;
     disabled?: boolean;
     quiet?: boolean;

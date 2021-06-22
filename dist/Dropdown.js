@@ -26,6 +26,6 @@ export default function Dropdown(props) {
             (_a = ref.current) === null || _a === void 0 ? void 0 : _a.removeEventListener('change', dispatchChange);
         };
     }, [ref]);
-    return (React.createElement("sp-dropdown", { ref: ref, "class": props.className, disabled: props.disabled || undefined, invalid: props.invalid || undefined, quiet: props.quiet || undefined, placeholder: props.placeholder }, props === null || props === void 0 ? void 0 : props.children));
+    return (React.createElement("sp-dropdown", { ref: ref, "class": props.className, disabled: props.disabled || undefined, invalid: props.invalid || undefined, quiet: props.quiet || undefined, placeholder: props.placeholder, selectedIndex: props.selectedIndex }, props === null || props === void 0 ? void 0 : props.children));
 }
 //# sourceMappingURL=Dropdown.js.map

@@ -1,16 +1,22 @@
 import React from 'react';
 declare namespace Spectrum {
-    type TextfieldType = 'number' | 'password' | 'search';
+    type TextareaType = 'number' | 'password' | 'search';
+    interface TextareaEvent extends globalThis.Event {
+        readonly target: (EventTarget & {
+            value: string;
+        }) | null;
+    }
 }
 declare type Props = {
     children?: React.ReactNode;
-    onInput?: (e: Event) => void;
+    onChange?: (e: Spectrum.TextareaEvent) => void;
+    onInput?: (e: Spectrum.TextareaEvent) => void;
     className?: string;
     disabled?: boolean;
     invalid?: boolean;
     placeholder?: string;
     quiet?: boolean;
-    type?: Spectrum.TextfieldType;
+    type?: Spectrum.TextareaType;
     valid?: boolean;
     value?: string;
 };
@@ -25,7 +31,7 @@ declare global {
                 invalid?: boolean;
                 placeholder?: string;
                 quiet?: boolean;
-                type?: Spectrum.TextfieldType;
+                type?: Spectrum.TextareaType;
                 valid?: boolean;
                 value?: string;
             };

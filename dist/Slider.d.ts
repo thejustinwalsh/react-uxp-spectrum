@@ -2,10 +2,16 @@ import React from 'react';
 declare namespace Spectrum {
     type SliderFillOffset = 'left' | 'right';
     type SliderVariant = 'filled';
+    interface SliderEvent extends globalThis.Event {
+        readonly target: (EventTarget & {
+            value: string;
+        }) | null;
+    }
 }
 declare type Props = {
     children?: React.ReactNode;
-    onInput?: (e: Event) => void;
+    onChange?: (e: Spectrum.SliderEvent) => void;
+    onInput?: (e: Spectrum.SliderEvent) => void;
     className?: string;
     disabled?: boolean;
     fillOffset?: Spectrum.SliderFillOffset;

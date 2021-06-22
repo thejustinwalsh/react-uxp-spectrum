@@ -1,10 +1,16 @@
 import React from 'react';
 declare namespace Spectrum {
     type TextfieldType = 'number' | 'password' | 'search';
+    interface TextfieldEvent extends globalThis.Event {
+        readonly target: (EventTarget & {
+            value: string;
+        }) | null;
+    }
 }
 declare type Props = {
     children?: React.ReactNode;
-    onInput?: (e: Event) => void;
+    onChange?: (e: Spectrum.TextfieldEvent) => void;
+    onInput?: (e: Spectrum.TextfieldEvent) => void;
     className?: string;
     disabled?: boolean;
     invalid?: boolean;

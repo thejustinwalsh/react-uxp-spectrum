@@ -10,6 +10,6 @@ export default function RadioGroup(props) {
             (_a = ref.current) === null || _a === void 0 ? void 0 : _a.removeEventListener('change', dispatchChange);
         };
     }, [ref]);
-    return (React.createElement("sp-radio-group", { ref: ref, "class": props === null || props === void 0 ? void 0 : props.className, column: (props === null || props === void 0 ? void 0 : props.column) || undefined }, props === null || props === void 0 ? void 0 : props.children));
+    return (React.createElement("sp-radio-group", { ref: ref, "class": props === null || props === void 0 ? void 0 : props.className, column: (props === null || props === void 0 ? void 0 : props.column) || undefined, value: props === null || props === void 0 ? void 0 : props.value }, props === null || props === void 0 ? void 0 : props.children));
 }
 //# sourceMappingURL=RadioGroup.js.map
