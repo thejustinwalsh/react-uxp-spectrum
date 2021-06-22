@@ -17,5 +17,13 @@ declare global {
         }
     }
 }
+/**
+ * Renders a divider.
+ *
+ * @example
+ * ```jsx
+ * <Spectrum.Divider size="large" />
+ * ```
+ */
 export default function Divider(props: Props): JSX.Element;
 export {};

@@ -26,5 +26,17 @@ declare global {
         }
     }
 }
+/**
+ * Renders a group of radio buttons horizontally or vertically (column layout), with an optional field {@link Spectrum.Label}.
+ *
+ * @example
+ * ```jsx
+ * <Spectrum.RadioGroup>
+ *   <Spectrum.Label slot="label">Select a product:</Spectrum.Label>
+ *   <Spectrum.Radio value="ps">Adobe Photoshop<Spectrum.Radio>
+ *   <Spectrum.Radio value="xd">Adobe XD</Spectrum.Radio>
+ * </Spectrum.RadioGroup>
+ * ```
+ */
 export default function RadioGroup(props: Props): JSX.Element;
 export {};

@@ -27,5 +27,13 @@ declare global {
         }
     }
 }
+/**
+ * Renders a button.
+ *
+ * @example
+ * ```jsx
+ * <Spectrum.Button variant="primary">Click</Spectrum.Button>
+ * ```
+ */
 export default function Button(props: Props): JSX.Element;
 export {};

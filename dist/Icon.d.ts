@@ -23,5 +23,13 @@ declare global {
         }
     }
 }
+/**
+ * Display a named icon.
+ *
+ * @example
+ * ```jsx
+ * <Spectrum.Icon size="xl" name="ui:Magnifier" />
+ * ```
+ */
 export default function Icon(props: Props): JSX.Element;
 export {};

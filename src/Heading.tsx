@@ -39,6 +39,14 @@ declare global {
   }
 }
 
+/**
+ * Renders heading text that is theme aware.
+ *
+ * @example
+ * ```jsx
+ * <Spectrum.Heading size="XL">Heading XL</Spectrum.Heading>
+ * ```
+ */
 export default function Heading(props: Props) {
   return (
     <sp-heading

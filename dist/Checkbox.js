@@ -1,4 +1,12 @@
 import React, { useEffect, useRef } from 'react';
+/**
+ * Renders a checkbox with associated label.
+ *
+ * @example
+ * ```jsx
+ * <Spectrum.Checkbox checked>Checked</Spectrum.Checkbox>
+ * ```
+ */
 export default function Checkbox(props) {
     var ref = useRef(null);
     var dispatchChange = function (e) { var _a; return (_a = props.onChange) === null || _a === void 0 ? void 0 : _a.call(props, e); };

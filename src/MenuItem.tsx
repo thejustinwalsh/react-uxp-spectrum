@@ -28,6 +28,18 @@ declare global {
   }
 }
 
+/**
+ * Renders a menu item, with an optional checkmark indicating selection.
+ *
+ * @example
+ * ```jsx
+ * <Spectrum.Menu>
+ *   <Spectrum.MenuItem disabled>California</Spectrum.MenuItem>
+ *   <Spectrum.MenuItem>Phoenix</Spectrum.MenuItem>
+ *   <Spectrum.MenuItem selected>Portland</Spectrum.MenuItem>
+ * </Spectrum.Menu>
+ * ```
+ */
 export default function MenuItem(props: Props) {
   const ref = useRef<HTMLElement>(null);
   const dispatchClick = (e: Event) =>

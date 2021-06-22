@@ -24,5 +24,13 @@ declare global {
         }
     }
 }
+/**
+ * Renders a link, that when clicked can launch a webpage in the user's default browser.
+ *
+ * @example
+ * ```jsx
+ * <Spectrum.Link href="https://thejustinwalsh.com">TJW</Spectrum.Link>
+ * ```
+ */
 export default function Link(props: Props): JSX.Element;
 export {};

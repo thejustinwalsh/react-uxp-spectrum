@@ -31,5 +31,13 @@ declare global {
         }
     }
 }
+/**
+ * Renders a checkbox with associated label.
+ *
+ * @example
+ * ```jsx
+ * <Spectrum.Checkbox checked>Checked</Spectrum.Checkbox>
+ * ```
+ */
 export default function Checkbox(props: Props): JSX.Element;
 export {};

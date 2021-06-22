@@ -24,5 +24,13 @@ declare global {
         }
     }
 }
+/**
+ * Renders body text that is theme aware.
+ *
+ * @example
+ * ```jsx
+ * <Spectrum.Body size="XL">This is some body text</Spectrum.Body>
+ * ```
+ */
 export default function Body(props: Props): JSX.Element;
 export {};

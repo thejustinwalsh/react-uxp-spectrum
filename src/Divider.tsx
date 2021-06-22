@@ -21,6 +21,14 @@ declare global {
   }
 }
 
+/**
+ * Renders a divider.
+ *
+ * @example
+ * ```jsx
+ * <Spectrum.Divider size="large" />
+ * ```
+ */
 export default function Divider(props: Props) {
   return (
     <sp-divider class={props?.className} size={props?.size}>

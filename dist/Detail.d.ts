@@ -24,5 +24,13 @@ declare global {
         }
     }
 }
+/**
+ * Renders detail text in a smaller font.
+ *
+ * @example
+ * ```jsx
+ * <Spectrum.Detail>The fine details<Spectrum.Detail>
+ * ```
+ */
 export default function Detail(props: Props): JSX.Element;
 export {};

@@ -1,4 +1,12 @@
 import React, { useEffect, useRef } from 'react';
+/**
+ * Renders a button.
+ *
+ * @example
+ * ```jsx
+ * <Spectrum.Button variant="primary">Click</Spectrum.Button>
+ * ```
+ */
 export default function Button(props) {
     var ref = useRef(null);
     var dispatchClick = function (e) { var _a; return (_a = props.onClick) === null || _a === void 0 ? void 0 : _a.call(props, e); };

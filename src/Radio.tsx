@@ -34,6 +34,14 @@ declare global {
   }
 }
 
+/**
+ * Renders a radio button with associated label.
+ *
+ * @example
+ * ```jsx
+ * <Spectrum.Radio checked value="ps">Adobe Photoshop</Spectrum.Radio>
+ * ```
+ */
 export default function Radio(props: Props) {
   const ref = useRef<HTMLElement>(null);
   const dispatchInput = (e: Event) => props.onClick?.(e as Spectrum.RadioEvent);

@@ -31,5 +31,15 @@ declare global {
         }
     }
 }
+/**
+ * Renders a progress bar.
+ *
+ * @example
+ * ```jsx
+ * <Spectrum.Progressbar max={100} value={50} valueLabel="593 kB">
+ *   <Spectrum.Label slot="label">Uploading...</Spectrum.Label>
+ * </Spectrum.Progressbar>
+ * ```
+ */
 export default function Progressbar(props: Props): JSX.Element;
 export {};

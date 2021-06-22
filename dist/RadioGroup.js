@@ -1,4 +1,16 @@
 import React, { useEffect, useRef } from 'react';
+/**
+ * Renders a group of radio buttons horizontally or vertically (column layout), with an optional field {@link Spectrum.Label}.
+ *
+ * @example
+ * ```jsx
+ * <Spectrum.RadioGroup>
+ *   <Spectrum.Label slot="label">Select a product:</Spectrum.Label>
+ *   <Spectrum.Radio value="ps">Adobe Photoshop<Spectrum.Radio>
+ *   <Spectrum.Radio value="xd">Adobe XD</Spectrum.Radio>
+ * </Spectrum.RadioGroup>
+ * ```
+ */
 export default function RadioGroup(props) {
     var ref = useRef(null);
     var dispatchChange = function (e) { var _a; return (_a = props.onChange) === null || _a === void 0 ? void 0 : _a.call(props, e); };

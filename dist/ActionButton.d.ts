@@ -24,5 +24,16 @@ declare global {
         }
     }
 }
+/**
+ * Renders an action button.
+ *
+ * @example
+ * ```jsx
+ * <Spectrum.ActionButton>
+ *   <Spectrum.Icon name="ui:Magnifier" size="xs" slot="icon" />
+ *   Zoom
+ * </Spectrum.ActionButton>
+ * ```
+ */
 export default function ActionButton(props: Props): JSX.Element;
 export {};

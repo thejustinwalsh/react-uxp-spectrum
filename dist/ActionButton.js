@@ -1,4 +1,15 @@
 import React, { useEffect, useRef } from 'react';
+/**
+ * Renders an action button.
+ *
+ * @example
+ * ```jsx
+ * <Spectrum.ActionButton>
+ *   <Spectrum.Icon name="ui:Magnifier" size="xs" slot="icon" />
+ *   Zoom
+ * </Spectrum.ActionButton>
+ * ```
+ */
 export default function ActionButton(props) {
     var ref = useRef(null);
     var dispatchClick = function (e) { var _a; return (_a = props.onClick) === null || _a === void 0 ? void 0 : _a.call(props, e); };

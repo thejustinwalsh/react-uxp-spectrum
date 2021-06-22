@@ -45,7 +45,7 @@ declare global {
  * @example
  * ```jsx
  * <Spectrum.Textfield placeholder="Phone Number">
- *   <Spectrum.Label isrequired="true" slot="label">Phone Number</Spectrum.Label>
+ *   <Spectrum.Label isRequired="true" slot="label">Phone Number</Spectrum.Label>
  * </Spectrum.Textfield>
  * ```
  */
