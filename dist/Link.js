@@ -1,13 +1,15 @@
 import React, { useEffect, useRef } from 'react';
 export default function Link(props) {
-    const ref = useRef(null);
-    const dispatchClick = (e) => props.onClick?.(e);
-    useEffect(() => {
-        ref.current?.addEventListener('click', dispatchClick);
-        return () => {
-            ref.current?.removeEventListener('click', dispatchClick);
+    var ref = useRef(null);
+    var dispatchClick = function (e) { var _a; return (_a = props.onClick) === null || _a === void 0 ? void 0 : _a.call(props, e); };
+    useEffect(function () {
+        var _a;
+        (_a = ref.current) === null || _a === void 0 ? void 0 : _a.addEventListener('click', dispatchClick);
+        return function () {
+            var _a;
+            (_a = ref.current) === null || _a === void 0 ? void 0 : _a.removeEventListener('click', dispatchClick);
         };
     }, []);
-    return (React.createElement("sp-link", { ref: ref, class: props.className, href: props.href, quiet: props.quiet || undefined, variant: props.variant }, props.children));
+    return (React.createElement("sp-link", { ref: ref, "class": props.className, href: props.href, quiet: props.quiet || undefined, variant: props.variant }, props.children));
 }
 //# sourceMappingURL=Link.js.map

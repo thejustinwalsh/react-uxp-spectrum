@@ -1,13 +1,15 @@
 import React, { useEffect, useRef } from 'react';
 export default function ActionButton(props) {
-    const ref = useRef(null);
-    const dispatchClick = (e) => props.onClick?.(e);
-    useEffect(() => {
-        ref.current?.addEventListener('click', dispatchClick);
-        return () => {
-            ref.current?.removeEventListener('click', dispatchClick);
+    var ref = useRef(null);
+    var dispatchClick = function (e) { var _a; return (_a = props.onClick) === null || _a === void 0 ? void 0 : _a.call(props, e); };
+    useEffect(function () {
+        var _a;
+        (_a = ref.current) === null || _a === void 0 ? void 0 : _a.addEventListener('click', dispatchClick);
+        return function () {
+            var _a;
+            (_a = ref.current) === null || _a === void 0 ? void 0 : _a.removeEventListener('click', dispatchClick);
         };
     }, [ref]);
-    return (React.createElement("sp-action-button", { ref: ref, class: props?.className, disabled: props?.disabled || undefined, quiet: props?.quiet || undefined }, props?.children));
+    return (React.createElement("sp-action-button", { ref: ref, "class": props === null || props === void 0 ? void 0 : props.className, disabled: (props === null || props === void 0 ? void 0 : props.disabled) || undefined, quiet: (props === null || props === void 0 ? void 0 : props.quiet) || undefined }, props === null || props === void 0 ? void 0 : props.children));
 }
 //# sourceMappingURL=ActionButton.js.map

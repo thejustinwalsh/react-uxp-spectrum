@@ -1,14 +1,16 @@
 import React, { useEffect, useRef } from 'react';
 export default function Button(props) {
-    const ref = useRef(null);
-    const dispatchClick = (e) => props.onClick?.(e);
-    useEffect(() => {
-        ref.current?.addEventListener('click', dispatchClick);
-        return () => {
-            ref.current?.removeEventListener('click', dispatchClick);
+    var ref = useRef(null);
+    var dispatchClick = function (e) { var _a; return (_a = props.onClick) === null || _a === void 0 ? void 0 : _a.call(props, e); };
+    useEffect(function () {
+        var _a;
+        (_a = ref.current) === null || _a === void 0 ? void 0 : _a.addEventListener('click', dispatchClick);
+        return function () {
+            var _a;
+            (_a = ref.current) === null || _a === void 0 ? void 0 : _a.removeEventListener('click', dispatchClick);
         };
     }, []);
-    const variant = props.variant || (props.quiet === true ? 'primary' : 'cta');
-    return (React.createElement("sp-button", { ref: ref, class: props.className, disabled: props.disabled || undefined, quiet: props.quiet || undefined, variant: variant }, props.children));
+    var variant = props.variant || (props.quiet === true ? 'primary' : 'cta');
+    return (React.createElement("sp-button", { ref: ref, "class": props.className, disabled: props.disabled || undefined, quiet: props.quiet || undefined, variant: variant }, props.children));
 }
 //# sourceMappingURL=Button.js.map

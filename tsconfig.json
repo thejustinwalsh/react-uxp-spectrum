@@ -5,8 +5,7 @@
         "sourceMap": true,
         "declaration": true,
         "noImplicitAny": false,
-        "target": "esnext",
-        "module": "esnext",
+        "importHelpers": true,
         "moduleResolution": "node",
         "esModuleInterop": true,
         "allowSyntheticDefaultImports": true,
@@ -17,6 +16,7 @@
             "node_modules/uxp-types",
             "./@types"
         ],
+        "module": "esnext",
         "lib": ["esnext", "dom"]
     },
     "exclude": [

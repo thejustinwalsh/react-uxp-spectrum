@@ -20,27 +20,27 @@ import RadioGroup from './RadioGroup';
 import Slider from './Slider';
 import Textarea from './Textarea';
 import Textfield from './Textfield';
-const Spectrum = {
-    Body,
-    Detail,
-    Heading,
-    Label,
-    ActionButton,
-    Button,
-    Checkbox,
-    Divider,
-    Dropdown,
-    Icon,
-    Link,
-    Menu,
-    MenuDivider,
-    MenuItem,
-    Progressbar,
-    Radio,
-    RadioGroup,
-    Slider,
-    Textarea,
-    Textfield,
+var Spectrum = {
+    Body: Body,
+    Detail: Detail,
+    Heading: Heading,
+    Label: Label,
+    ActionButton: ActionButton,
+    Button: Button,
+    Checkbox: Checkbox,
+    Divider: Divider,
+    Dropdown: Dropdown,
+    Icon: Icon,
+    Link: Link,
+    Menu: Menu,
+    MenuDivider: MenuDivider,
+    MenuItem: MenuItem,
+    Progressbar: Progressbar,
+    Radio: Radio,
+    RadioGroup: RadioGroup,
+    Slider: Slider,
+    Textarea: Textarea,
+    Textfield: Textfield
 };
 export { Body, Detail, Heading, Label, ActionButton, Button, Checkbox, Divider, Dropdown, Icon, Link, Progressbar, Radio, RadioGroup, Slider, Textarea, Textfield, };
 export default Spectrum;

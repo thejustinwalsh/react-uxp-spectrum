@@ -16,14 +16,16 @@ import React, { useEffect, useRef } from 'react';
  * ```
  */
 export default function Dropdown(props) {
-    const ref = useRef(null);
-    const dispatchChange = (e) => props.onChange?.(e);
-    useEffect(() => {
-        ref.current?.addEventListener('change', dispatchChange);
-        return () => {
-            ref.current?.removeEventListener('change', dispatchChange);
+    var ref = useRef(null);
+    var dispatchChange = function (e) { var _a; return (_a = props.onChange) === null || _a === void 0 ? void 0 : _a.call(props, e); };
+    useEffect(function () {
+        var _a;
+        (_a = ref.current) === null || _a === void 0 ? void 0 : _a.addEventListener('change', dispatchChange);
+        return function () {
+            var _a;
+            (_a = ref.current) === null || _a === void 0 ? void 0 : _a.removeEventListener('change', dispatchChange);
         };
     }, [ref]);
-    return (React.createElement("sp-dropdown", { ref: ref, class: props.className, disabled: props.disabled || undefined, invalid: props.invalid || undefined, quiet: props.quiet || undefined, placeholder: props.placeholder }, props?.children));
+    return (React.createElement("sp-dropdown", { ref: ref, "class": props.className, disabled: props.disabled || undefined, invalid: props.invalid || undefined, quiet: props.quiet || undefined, placeholder: props.placeholder }, props === null || props === void 0 ? void 0 : props.children));
 }
 //# sourceMappingURL=Dropdown.js.map
