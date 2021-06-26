@@ -43,19 +43,26 @@ declare global {
  */
 export default function Checkbox(props: Props) {
   const ref = useRef<HTMLElement>(null);
-  const dispatchChange = (e: Event) =>
-    props.onChange?.(e as Spectrum.CheckboxEvent);
-  const dispatchInput = (e: Event) =>
-    props.onInput?.(e as Spectrum.CheckboxEvent);
 
   useEffect(() => {
+    const dispatchChange = (e: Event) =>
+      props.onChange?.(e as Spectrum.CheckboxEvent);
+
     ref.current?.addEventListener('change', dispatchChange);
-    ref.current?.addEventListener('input', dispatchInput);
     return () => {
       ref.current?.removeEventListener('change', dispatchChange);
+    };
+  }, [props.onChange]);
+
+  useEffect(() => {
+    const dispatchInput = (e: Event) =>
+      props.onInput?.(e as Spectrum.CheckboxEvent);
+
+    ref.current?.addEventListener('input', dispatchInput);
+    return () => {
       ref.current?.removeEventListener('input', dispatchInput);
     };
-  }, [ref]);
+  }, [props.onInput]);
 
   return (
     <sp-checkbox

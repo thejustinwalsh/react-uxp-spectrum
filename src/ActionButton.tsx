@@ -41,15 +41,16 @@ declare global {
  */
 export default function ActionButton(props: Props) {
   const ref = useRef<HTMLElement>(null);
-  const dispatchClick = (e: Event) =>
-    props.onClick?.(e as Spectrum.ActionButtonEvent);
 
   useEffect(() => {
+    const dispatchClick = (e: Event) =>
+      props.onClick?.(e as Spectrum.ActionButtonEvent);
+
     ref.current?.addEventListener('click', dispatchClick);
     return () => {
       ref.current?.removeEventListener('click', dispatchClick);
     };
-  }, [ref]);
+  }, [props.onClick]);
 
   return (
     <sp-action-button

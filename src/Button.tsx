@@ -46,15 +46,16 @@ declare global {
  */
 export default function Button(props: Props) {
   const ref = useRef<HTMLElement>(null);
-  const dispatchClick = (e: Event) =>
-    props.onClick?.(e as Spectrum.ButtonEvent);
 
   useEffect(() => {
+    const dispatchClick = (e: Event) =>
+      props.onClick?.(e as Spectrum.ButtonEvent);
+
     ref.current?.addEventListener('click', dispatchClick);
     return () => {
       ref.current?.removeEventListener('click', dispatchClick);
     };
-  }, []);
+  }, [props.onClick]);
 
   const variant = props.variant || (props.quiet === true ? 'primary' : 'cta');
 

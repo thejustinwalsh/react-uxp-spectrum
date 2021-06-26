@@ -44,14 +44,16 @@ declare global {
  */
 export default function Radio(props: Props) {
   const ref = useRef<HTMLElement>(null);
-  const dispatchInput = (e: Event) => props.onClick?.(e as Spectrum.RadioEvent);
 
   useEffect(() => {
+    const dispatchInput = (e: Event) =>
+      props.onClick?.(e as Spectrum.RadioEvent);
+
     ref.current?.addEventListener('input', dispatchInput);
     return () => {
       ref.current?.removeEventListener('input', dispatchInput);
     };
-  }, [ref]);
+  }, [props.onClick]);
 
   return (
     <sp-radio

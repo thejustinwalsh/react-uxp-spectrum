@@ -47,15 +47,16 @@ declare global {
  */
 export default function Menu(props: Props) {
   const ref = useRef<HTMLElement>(null);
-  const dispatchChange = (e: Event) =>
-    props.onChange?.(e as Spectrum.MenuEvent);
 
   useEffect(() => {
+    const dispatchChange = (e: Event) =>
+      props.onChange?.(e as Spectrum.MenuEvent);
+
     ref.current?.addEventListener('change', dispatchChange);
     return () => {
       ref.current?.removeEventListener('change', dispatchChange);
     };
-  }, [ref]);
+  }, [props.onChange]);
 
   return (
     <sp-menu

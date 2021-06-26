@@ -17,15 +17,15 @@ import React, { useEffect, useRef } from 'react';
  */
 export default function Menu(props) {
     var ref = useRef(null);
-    var dispatchChange = function (e) { var _a; return (_a = props.onChange) === null || _a === void 0 ? void 0 : _a.call(props, e); };
     useEffect(function () {
         var _a;
+        var dispatchChange = function (e) { var _a; return (_a = props.onChange) === null || _a === void 0 ? void 0 : _a.call(props, e); };
         (_a = ref.current) === null || _a === void 0 ? void 0 : _a.addEventListener('change', dispatchChange);
         return function () {
             var _a;
             (_a = ref.current) === null || _a === void 0 ? void 0 : _a.removeEventListener('change', dispatchChange);
         };
-    }, [ref]);
+    }, [props.onChange]);
     return (React.createElement("sp-menu", { ref: ref, "class": props.className, slot: props.slot === 'options' ? 'options' : undefined, selectedIndex: props.selectedIndex }, props.children));
 }
 //# sourceMappingURL=Menu.js.map

@@ -42,15 +42,16 @@ declare global {
  */
 export default function RadioGroup(props: Props) {
   const ref = useRef<HTMLElement>(null);
-  const dispatchChange = (e: Event) =>
-    props.onChange?.(e as Spectrum.RadioGroupEvent);
 
   useEffect(() => {
+    const dispatchChange = (e: Event) =>
+      props.onChange?.(e as Spectrum.RadioGroupEvent);
+
     ref.current?.addEventListener('change', dispatchChange);
     return () => {
       ref.current?.removeEventListener('change', dispatchChange);
     };
-  }, [ref]);
+  }, [props.onChange]);
 
   return (
     <sp-radio-group

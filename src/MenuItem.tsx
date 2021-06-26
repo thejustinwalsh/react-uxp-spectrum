@@ -42,15 +42,16 @@ declare global {
  */
 export default function MenuItem(props: Props) {
   const ref = useRef<HTMLElement>(null);
-  const dispatchClick = (e: Event) =>
-    props.onClick?.(e as Spectrum.MenuItemEvent);
 
   useEffect(() => {
+    const dispatchClick = (e: Event) =>
+      props.onClick?.(e as Spectrum.MenuItemEvent);
+
     ref.current?.addEventListener('click', dispatchClick);
     return () => {
       ref.current?.removeEventListener('click', dispatchClick);
     };
-  }, []);
+  }, [props.onClick]);
 
   return (
     <sp-menu-item

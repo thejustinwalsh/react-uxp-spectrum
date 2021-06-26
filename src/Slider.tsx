@@ -54,19 +54,26 @@ declare global {
  */
 export default function Slider(props: Props) {
   const ref = useRef<HTMLElement>(null);
-  const dispatchChange = (e: Event) =>
-    props.onChange?.(e as Spectrum.SliderEvent);
-  const dispatchInput = (e: Event) =>
-    props.onInput?.(e as Spectrum.SliderEvent);
 
   useEffect(() => {
+    const dispatchChange = (e: Event) =>
+      props.onChange?.(e as Spectrum.SliderEvent);
+
     ref.current?.addEventListener('change', dispatchChange);
-    ref.current?.addEventListener('input', dispatchInput);
     return () => {
       ref.current?.removeEventListener('change', dispatchChange);
+    };
+  }, [props.onChange]);
+
+  useEffect(() => {
+    const dispatchInput = (e: Event) =>
+      props.onInput?.(e as Spectrum.SliderEvent);
+
+    ref.current?.addEventListener('input', dispatchInput);
+    return () => {
       ref.current?.removeEventListener('input', dispatchInput);
     };
-  }, [ref]);
+  }, [props.onInput]);
 
   return (
     <sp-slider

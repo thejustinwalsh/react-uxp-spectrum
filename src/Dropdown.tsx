@@ -52,15 +52,16 @@ declare global {
  */
 export default function Dropdown(props: Props) {
   const ref = useRef<HTMLElement>(null);
-  const dispatchChange = (e: Event) =>
-    props.onChange?.(e as Spectrum.DropdownEvent);
 
   useEffect(() => {
+    const dispatchChange = (e: Event) =>
+      props.onChange?.(e as Spectrum.DropdownEvent);
+
     ref.current?.addEventListener('change', dispatchChange);
     return () => {
       ref.current?.removeEventListener('change', dispatchChange);
     };
-  }, [ref]);
+  }, [props.onChange]);
 
   return (
     <sp-dropdown

@@ -51,19 +51,26 @@ declare global {
  */
 export default function Textarea(props: Props) {
   const ref = useRef<HTMLElement>(null);
-  const dispatchChange = (e: Event) =>
-    props.onChange?.(e as Spectrum.TextareaEvent);
-  const dispatchInput = (e: Event) =>
-    props.onInput?.(e as Spectrum.TextareaEvent);
 
   useEffect(() => {
+    const dispatchChange = (e: Event) =>
+      props.onChange?.(e as Spectrum.TextareaEvent);
+
     ref.current?.addEventListener('change', dispatchChange);
-    ref.current?.addEventListener('input', dispatchInput);
     return () => {
       ref.current?.removeEventListener('change', dispatchChange);
+    };
+  }, [props.onChange]);
+
+  useEffect(() => {
+    const dispatchInput = (e: Event) =>
+      props.onInput?.(e as Spectrum.TextareaEvent);
+
+    ref.current?.addEventListener('input', dispatchInput);
+    return () => {
       ref.current?.removeEventListener('input', dispatchInput);
     };
-  }, [ref]);
+  }, [props.onInput]);
 
   return (
     <sp-textarea

@@ -17,15 +17,15 @@ import React, { useEffect, useRef } from 'react';
  */
 export default function Dropdown(props) {
     var ref = useRef(null);
-    var dispatchChange = function (e) { var _a; return (_a = props.onChange) === null || _a === void 0 ? void 0 : _a.call(props, e); };
     useEffect(function () {
         var _a;
+        var dispatchChange = function (e) { var _a; return (_a = props.onChange) === null || _a === void 0 ? void 0 : _a.call(props, e); };
         (_a = ref.current) === null || _a === void 0 ? void 0 : _a.addEventListener('change', dispatchChange);
         return function () {
             var _a;
             (_a = ref.current) === null || _a === void 0 ? void 0 : _a.removeEventListener('change', dispatchChange);
         };
-    }, [ref]);
+    }, [props.onChange]);
     return (React.createElement("sp-dropdown", { ref: ref, "class": props.className, disabled: props.disabled || undefined, invalid: props.invalid || undefined, quiet: props.quiet || undefined, placeholder: props.placeholder, selectedIndex: props.selectedIndex }, props === null || props === void 0 ? void 0 : props.children));
 }
 //# sourceMappingURL=Dropdown.js.map

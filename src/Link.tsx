@@ -38,14 +38,15 @@ declare global {
  */
 export default function Link(props: Props) {
   const ref = useRef<HTMLElement>(null);
-  const dispatchClick = (e: MouseEvent) => props.onClick?.(e);
 
   useEffect(() => {
+    const dispatchClick = (e: MouseEvent) => props.onClick?.(e);
+
     ref.current?.addEventListener('click', dispatchClick);
     return () => {
       ref.current?.removeEventListener('click', dispatchClick);
     };
-  }, []);
+  }, [props.onClick]);
 
   return (
     <sp-link
