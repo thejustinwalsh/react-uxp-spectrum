@@ -16,6 +16,7 @@ type Props = {
   disabled?: boolean;
   indeterminate?: boolean;
   invalid?: boolean;
+  size?: SpectrumComponentSize;
 };
 
 declare global {
@@ -72,6 +73,7 @@ export default function Checkbox(props: Props) {
       class={props?.className}
       checked={props?.checked || undefined}
       disabled={props?.disabled || undefined}
+      size={props?.size || undefined}
       indeterminate={props?.indeterminate || undefined}
       invalid={props.invalid || undefined}
     >
