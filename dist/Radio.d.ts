@@ -1,4 +1,5 @@
 import React from 'react';
+import { SpectrumComponentSize } from './common';
 declare namespace Spectrum {
     interface RadioEvent extends globalThis.Event {
         readonly target: (EventTarget & {
@@ -28,6 +29,7 @@ declare global {
                 emphasized?: boolean;
                 invalid?: boolean;
                 value?: string;
+                size?: SpectrumComponentSize;
             };
         }
     }

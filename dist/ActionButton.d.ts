@@ -1,4 +1,5 @@
 import React from 'react';
+import { SpectrumComponentSize } from './common';
 declare namespace Spectrum {
     interface ActionButtonEvent extends globalThis.Event {
         readonly target: (EventTarget & unknown) | null;
@@ -20,6 +21,7 @@ declare global {
                 class?: string;
                 disabled?: boolean;
                 quiet?: boolean;
+                size?: SpectrumComponentSize;
             };
         }
     }

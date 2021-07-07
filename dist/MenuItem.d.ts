@@ -1,4 +1,5 @@
 import React from 'react';
+import { SpectrumComponentSize } from './common';
 declare namespace Spectrum {
     interface MenuItemEvent extends globalThis.Event {
         readonly target: (EventTarget & {
@@ -22,6 +23,7 @@ declare global {
                 class?: string;
                 disabled?: boolean;
                 selected?: boolean;
+                size?: SpectrumComponentSize;
             };
         }
     }

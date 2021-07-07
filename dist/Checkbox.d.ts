@@ -1,4 +1,5 @@
 import React from 'react';
+import { SpectrumComponentSize } from './common';
 declare namespace Spectrum {
     interface CheckboxEvent extends globalThis.Event {
         readonly target: (EventTarget & {
@@ -27,6 +28,7 @@ declare global {
                 disabled?: boolean;
                 indeterminate?: boolean;
                 invalid?: boolean;
+                size?: SpectrumComponentSize;
             };
         }
     }

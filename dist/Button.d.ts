@@ -1,4 +1,5 @@
 import React from 'react';
+import { SpectrumComponentSize } from './common';
 declare namespace Spectrum {
     type ButtonVariant = 'cta' | 'primary' | 'secondary' | 'warning' | 'overBackground';
     interface ButtonEvent extends globalThis.Event {
@@ -23,6 +24,7 @@ declare global {
                 disabled?: boolean;
                 quiet?: boolean;
                 variant?: Spectrum.ButtonVariant;
+                size?: SpectrumComponentSize;
             };
         }
     }

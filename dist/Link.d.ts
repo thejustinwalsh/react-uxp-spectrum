@@ -1,4 +1,5 @@
 import React from 'react';
+import { SpectrumComponentSize } from './common';
 declare namespace Spectrum {
     type LinkVariant = 'overBackground';
 }
@@ -20,6 +21,7 @@ declare global {
                 href?: string;
                 quiet?: boolean;
                 variant?: Spectrum.LinkVariant;
+                size?: SpectrumComponentSize;
             };
         }
     }

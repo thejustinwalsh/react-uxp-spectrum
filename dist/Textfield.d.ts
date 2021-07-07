@@ -1,4 +1,5 @@
 import React from 'react';
+import { SpectrumComponentSize } from './common';
 declare namespace Spectrum {
     type TextfieldType = 'number' | 'password' | 'search';
     interface TextfieldEvent extends globalThis.Event {
@@ -34,6 +35,7 @@ declare global {
                 type?: Spectrum.TextfieldType;
                 valid?: boolean;
                 value?: string;
+                size?: SpectrumComponentSize;
             };
         }
     }

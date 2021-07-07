@@ -1,4 +1,5 @@
 import React from 'react';
+import { SpectrumComponentSize } from './common';
 declare namespace Spectrum {
     interface DropdownEvent extends globalThis.Event {
         readonly target: (EventTarget & {
@@ -28,6 +29,7 @@ declare global {
                 quiet?: boolean;
                 placeholder?: string;
                 selectedIndex?: number;
+                size?: SpectrumComponentSize;
             };
         }
     }
