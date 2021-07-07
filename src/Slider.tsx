@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { SpectrumComponentSize } from './common';
 
 namespace Spectrum {
   export type SliderFillOffset = 'left' | 'right';
@@ -38,6 +39,7 @@ declare global {
         value: number;
         'value-label'?: string;
         variant?: Spectrum.SliderVariant;
+        size?: SpectrumComponentSize;
       };
     }
   }

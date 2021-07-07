@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { SpectrumComponentSize } from './common';
 
 namespace Spectrum {
   export type ButtonVariant =
@@ -31,6 +32,7 @@ declare global {
         disabled?: boolean;
         quiet?: boolean;
         variant?: Spectrum.ButtonVariant;
+        size?: SpectrumComponentSize;
       };
     }
   }

@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { SpectrumComponentSize } from './common';
 
 namespace Spectrum {
   export type MenuSlot = 'options';
@@ -24,6 +25,7 @@ declare global {
         class?: string;
         slot?: Spectrum.MenuSlot;
         selectedIndex?: number;
+        size?: SpectrumComponentSize;
       };
     }
   }

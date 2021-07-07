@@ -1,4 +1,5 @@
 import React from 'react';
+import { SpectrumComponentSize } from './common';
 
 namespace Spectrum {
   export type LabelSlot = 'label';
@@ -19,6 +20,7 @@ declare global {
         class?: string;
         slot?: Spectrum.LabelSlot;
         isrequired?: boolean;
+        size?: SpectrumComponentSize;
       };
     }
   }

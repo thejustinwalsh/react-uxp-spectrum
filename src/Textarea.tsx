@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { SpectrumComponentSize } from './common';
 
 namespace Spectrum {
   export type TextareaType = 'number' | 'password' | 'search';
@@ -35,6 +36,7 @@ declare global {
         type?: Spectrum.TextareaType;
         valid?: boolean;
         value?: string;
+        size?: SpectrumComponentSize;
       };
     }
   }
