@@ -22,6 +22,6 @@ export default function MenuItem(props) {
             (_a = ref.current) === null || _a === void 0 ? void 0 : _a.removeEventListener('click', dispatchClick);
         };
     }, [props.onClick]);
-    return (React.createElement("sp-menu-item", { ref: ref, key: props.key, "class": props.className, disabled: props.disabled || undefined, selected: props.selected || undefined, value: props.value }, props.children));
+    return (React.createElement("sp-menu-item", { ref: ref, "class": props.className, disabled: props.disabled || undefined, selected: props.selected || undefined, value: props.value }, props.children));
 }
 //# sourceMappingURL=MenuItem.js.map

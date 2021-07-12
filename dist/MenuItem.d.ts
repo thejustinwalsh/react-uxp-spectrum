@@ -12,7 +12,6 @@ declare type Props = {
     onClick?: (e: Spectrum.MenuItemEvent) => void;
     className?: string;
     disabled?: boolean;
-    key?: string;
     value?: string;
     selected?: boolean;
 };
