@@ -33,6 +33,7 @@ declare global {
         quiet?: boolean;
         variant?: Spectrum.ButtonVariant;
         size?: SpectrumComponentSize;
+        onClick?: (e?: any) => void;
       };
     }
   }
