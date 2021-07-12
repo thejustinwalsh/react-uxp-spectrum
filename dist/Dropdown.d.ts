@@ -30,6 +30,7 @@ declare global {
                 placeholder?: string;
                 selectedIndex?: number;
                 size?: SpectrumComponentSize;
+                onMouseDown?: (e?: any) => void;
             };
         }
     }

@@ -31,6 +31,7 @@ declare global {
         indeterminate?: boolean;
         invalid?: boolean;
         size?: SpectrumComponentSize;
+        onClick?: (e?: any) => void;
       };
     }
   }
