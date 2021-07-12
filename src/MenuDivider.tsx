@@ -8,7 +8,7 @@ declare global {
   namespace JSX {
     interface IntrinsicElements {
       'sp-menu-divider': {
-        children: undefined;
+        children?: undefined;
         class?: string;
       };
     }
