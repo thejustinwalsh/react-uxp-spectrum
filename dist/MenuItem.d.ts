@@ -13,6 +13,7 @@ declare type Props = {
     className?: string;
     disabled?: boolean;
     key?: string;
+    value?: string;
     selected?: boolean;
 };
 declare global {
@@ -22,9 +23,11 @@ declare global {
                 children?: React.ReactNode;
                 ref?: React.RefObject<HTMLElement>;
                 key?: string;
+                onClick?: (e?: React.ChangeEvent<HTMLSelectElement>) => void;
                 class?: string;
                 disabled?: boolean;
                 selected?: boolean;
+                value?: string;
                 size?: SpectrumComponentSize;
             };
         }

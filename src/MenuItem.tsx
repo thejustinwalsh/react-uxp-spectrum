@@ -13,6 +13,7 @@ type Props = {
   className?: string;
   disabled?: boolean;
   key?: string;
+  value?: string;
   selected?: boolean;
 };
 
@@ -23,9 +24,11 @@ declare global {
         children?: React.ReactNode;
         ref?: React.RefObject<HTMLElement>;
         key?: string;
+        onClick?: (e?: React.ChangeEvent<HTMLSelectElement>) => void;
         class?: string;
         disabled?: boolean;
         selected?: boolean;
+        value?: string;
         size?: SpectrumComponentSize;
       };
     }
@@ -44,6 +47,7 @@ declare global {
  * </Spectrum.Menu>
  * ```
  */
+
 export default function MenuItem(props: Props) {
   const ref = useRef<HTMLElement>(null);
 
@@ -64,6 +68,7 @@ export default function MenuItem(props: Props) {
       class={props.className}
       disabled={props.disabled || undefined}
       selected={props.selected || undefined}
+      value={props.value}
     >
       {props.children}
     </sp-menu-item>
