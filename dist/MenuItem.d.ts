@@ -23,7 +23,6 @@ declare global {
                 children?: React.ReactNode;
                 ref?: React.RefObject<HTMLElement>;
                 key?: string;
-                onClick?: (e?: React.ChangeEvent<HTMLSelectElement>) => void;
                 class?: string;
                 disabled?: boolean;
                 selected?: boolean;

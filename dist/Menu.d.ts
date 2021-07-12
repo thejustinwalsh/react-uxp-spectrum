@@ -22,6 +22,7 @@ declare global {
                 children?: React.ReactNode;
                 ref?: React.RefObject<HTMLElement>;
                 class?: string;
+                onClick?: (e?: React.ChangeEvent<HTMLSelectElement>) => void;
                 slot?: Spectrum.MenuSlot;
                 selectedIndex?: number;
                 size?: SpectrumComponentSize;
