@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { SpectrumComponetDefaults } from './common';
 /**
  * Renders a menu with menu items. Inside the {@link Spectrum.Menu}, a series of
  * {@link Spectrum.MenuItem} or {@link Spectrum.MenuDivider} elements may exist.
@@ -26,6 +27,6 @@ export default function Menu(props) {
             (_a = ref.current) === null || _a === void 0 ? void 0 : _a.removeEventListener('change', dispatchChange);
         };
     }, [props.onChange]);
-    return (React.createElement("sp-menu", { ref: ref, "class": props.className, slot: props.slot === 'options' ? 'options' : undefined, selectedIndex: props.selectedIndex }, props.children));
+    return (React.createElement("sp-menu", { ref: ref, "class": props.className, slot: props.slot === 'options' ? 'options' : undefined, selectedIndex: props.selectedIndex, size: (props === null || props === void 0 ? void 0 : props.size) || SpectrumComponetDefaults.defaultSize }, props.children));
 }
 //# sourceMappingURL=Menu.js.map

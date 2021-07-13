@@ -14,6 +14,7 @@ declare type Props = {
     className?: string;
     slot?: Spectrum.MenuSlot;
     selectedIndex?: number;
+    size?: SpectrumComponentSize;
 };
 declare global {
     namespace JSX {

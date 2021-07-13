@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { SpectrumComponetDefaults } from './common';
 /**
  * Renders a link, that when clicked can launch a webpage in the user's default browser.
  *
@@ -18,6 +19,6 @@ export default function Link(props) {
             (_a = ref.current) === null || _a === void 0 ? void 0 : _a.removeEventListener('click', dispatchClick);
         };
     }, [props.onClick]);
-    return (React.createElement("sp-link", { ref: ref, "class": props.className, href: props.href, quiet: props.quiet || undefined, variant: props.variant }, props.children));
+    return (React.createElement("sp-link", { ref: ref, "class": props.className, href: props.href, quiet: props.quiet || undefined, variant: props.variant, size: (props === null || props === void 0 ? void 0 : props.size) || SpectrumComponetDefaults.defaultSize }, props.children));
 }
 //# sourceMappingURL=Link.js.map

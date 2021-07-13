@@ -10,6 +10,7 @@ declare type Props = {
     href?: string;
     quiet?: boolean;
     variant?: Spectrum.LinkVariant;
+    size?: SpectrumComponentSize;
 };
 declare global {
     namespace JSX {

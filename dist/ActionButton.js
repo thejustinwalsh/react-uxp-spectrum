@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { SpectrumComponetDefaults } from './common';
 /**
  * Renders an action button.
  *
@@ -21,6 +22,6 @@ export default function ActionButton(props) {
             (_a = ref.current) === null || _a === void 0 ? void 0 : _a.removeEventListener('click', dispatchClick);
         };
     }, [props.onClick]);
-    return (React.createElement("sp-action-button", { ref: ref, "class": props === null || props === void 0 ? void 0 : props.className, disabled: (props === null || props === void 0 ? void 0 : props.disabled) || undefined, quiet: (props === null || props === void 0 ? void 0 : props.quiet) || undefined }, props === null || props === void 0 ? void 0 : props.children));
+    return (React.createElement("sp-action-button", { ref: ref, "class": props === null || props === void 0 ? void 0 : props.className, disabled: (props === null || props === void 0 ? void 0 : props.disabled) || undefined, quiet: (props === null || props === void 0 ? void 0 : props.quiet) || undefined, size: (props === null || props === void 0 ? void 0 : props.size) || SpectrumComponetDefaults.defaultSize }, props === null || props === void 0 ? void 0 : props.children));
 }
 //# sourceMappingURL=ActionButton.js.map

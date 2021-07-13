@@ -20,6 +20,7 @@ declare type Props = {
     type?: Spectrum.TextareaType;
     valid?: boolean;
     value?: string;
+    size?: SpectrumComponentSize;
 };
 declare global {
     namespace JSX {

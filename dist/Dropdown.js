@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { SpectrumComponetDefaults } from './common';
 /**
  * Renders a dropdown with menu items. The dropdown must contain a {@link Spectrum.Menu}
  * with `slot="options"`, and inside the {@link Spectrum.Menu}, a series of {@link Spectrum.MenuItem}
@@ -26,6 +27,6 @@ export default function Dropdown(props) {
             (_a = ref.current) === null || _a === void 0 ? void 0 : _a.removeEventListener('change', dispatchChange);
         };
     }, [props.onChange]);
-    return (React.createElement("sp-dropdown", { ref: ref, "class": props.className, disabled: props.disabled || undefined, invalid: props.invalid || undefined, quiet: props.quiet || undefined, placeholder: props.placeholder, selectedIndex: props.selectedIndex }, props === null || props === void 0 ? void 0 : props.children));
+    return (React.createElement("sp-dropdown", { ref: ref, "class": props.className, disabled: props.disabled || undefined, invalid: props.invalid || undefined, quiet: props.quiet || undefined, placeholder: props.placeholder, selectedIndex: props.selectedIndex, size: (props === null || props === void 0 ? void 0 : props.size) || SpectrumComponetDefaults.defaultSize }, props === null || props === void 0 ? void 0 : props.children));
 }
 //# sourceMappingURL=Dropdown.js.map

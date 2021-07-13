@@ -14,6 +14,8 @@ declare type Props = {
     disabled?: boolean;
     value?: string;
     selected?: boolean;
+    size?: SpectrumComponentSize;
+    keyCustom?: number | string;
 };
 declare global {
     namespace JSX {
@@ -21,7 +23,7 @@ declare global {
             'sp-menu-item': {
                 children?: React.ReactNode;
                 ref?: React.RefObject<HTMLElement>;
-                key?: string;
+                key?: string | number;
                 class?: string;
                 disabled?: boolean;
                 selected?: boolean;

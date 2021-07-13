@@ -8,6 +8,7 @@ declare type Props = {
     className?: string;
     slot?: Spectrum.LabelSlot;
     isRequired?: boolean;
+    size?: SpectrumComponentSize;
 };
 declare global {
     namespace JSX {

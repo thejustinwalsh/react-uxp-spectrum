@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { SpectrumComponetDefaults } from './common';
 /**
  * Renders a button.
  *
@@ -19,6 +20,6 @@ export default function Button(props) {
         };
     }, [props.onClick]);
     var variant = props.variant || (props.quiet === true ? 'primary' : 'cta');
-    return (React.createElement("sp-button", { ref: ref, "class": props.className, disabled: props.disabled || undefined, quiet: props.quiet || undefined, variant: variant }, props.children));
+    return (React.createElement("sp-button", { ref: ref, "class": props.className, disabled: props.disabled || undefined, quiet: props.quiet || undefined, variant: variant, size: (props === null || props === void 0 ? void 0 : props.size) || SpectrumComponetDefaults.defaultSize }, props.children));
 }
 //# sourceMappingURL=Button.js.map

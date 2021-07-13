@@ -22,6 +22,7 @@ declare type Props = {
     value: number;
     valueLabel?: string;
     variant?: Spectrum.SliderVariant;
+    size?: SpectrumComponentSize;
 };
 declare global {
     namespace JSX {

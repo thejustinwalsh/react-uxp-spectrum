@@ -13,6 +13,7 @@ declare type Props = {
     disabled?: boolean;
     quiet?: boolean;
     variant?: Spectrum.ButtonVariant;
+    size?: SpectrumComponentSize;
 };
 declare global {
     namespace JSX {

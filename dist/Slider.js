@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { SpectrumComponetDefaults } from './common';
 /**
  * Renders a slider with optional associated {@link Spectrum.Label}.
  * @example
@@ -28,6 +29,6 @@ export default function Slider(props) {
             (_a = ref.current) === null || _a === void 0 ? void 0 : _a.removeEventListener('input', dispatchInput);
         };
     }, [props.onInput]);
-    return (React.createElement("sp-slider", { ref: ref, "class": props.className, disabled: props.disabled || undefined, "fill-offset": props.fillOffset, min: props.min, max: props.max, "show-value": props.showValue === false ? false : undefined, value: props.value, "value-label": props.valueLabel, variant: props.variant }, props === null || props === void 0 ? void 0 : props.children));
+    return (React.createElement("sp-slider", { ref: ref, "class": props.className, disabled: props.disabled || undefined, "fill-offset": props.fillOffset, min: props.min, max: props.max, "show-value": props.showValue === false ? false : undefined, value: props.value, "value-label": props.valueLabel, variant: props.variant, size: (props === null || props === void 0 ? void 0 : props.size) || SpectrumComponetDefaults.defaultSize }, props === null || props === void 0 ? void 0 : props.children));
 }
 //# sourceMappingURL=Slider.js.map

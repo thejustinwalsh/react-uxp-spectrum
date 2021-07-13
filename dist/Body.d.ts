@@ -1,15 +1,15 @@
 import React from 'react';
+import { SpectrumComponentSize } from './common';
 declare namespace Spectrum {
     type BodyClassification = 'serif' | 'sans serif';
     type BodyScript = 'latin' | 'han' | 'arabic' | 'hebrew';
-    type BodySize = 'XS' | 'S' | 'M' | 'L' | 'XL' | 'XXL';
 }
 declare type Props = {
     children?: React.ReactNode;
     className?: string;
     classification?: Spectrum.BodyClassification;
     script?: Spectrum.BodyScript;
-    size?: Spectrum.BodySize;
+    size?: SpectrumComponentSize;
 };
 declare global {
     namespace JSX {
@@ -19,7 +19,7 @@ declare global {
                 class?: string;
                 classification?: Spectrum.BodyClassification;
                 script?: Spectrum.BodyScript;
-                size?: Spectrum.BodySize;
+                size?: SpectrumComponentSize;
             };
         }
     }

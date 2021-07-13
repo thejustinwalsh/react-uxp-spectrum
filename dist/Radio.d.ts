@@ -16,6 +16,7 @@ declare type Props = {
     emphasized?: boolean;
     invalid?: boolean;
     value?: string;
+    size?: SpectrumComponentSize;
 };
 declare global {
     namespace JSX {
