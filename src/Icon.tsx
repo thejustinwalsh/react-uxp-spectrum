@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { SpectrumComponentSize } from './common';
+import { SpectrumComponentSize, SpectrumComponetDefaults } from './common';
 
 namespace Spectrum {
   export type IconName =
@@ -78,7 +78,7 @@ export default function Icon(props: Props) {
     <sp-icon
       class={props?.className}
       name={props.name}
-      size={props.size}
+      size={props?.size || SpectrumComponetDefaults.defaultSize}
       slot={props.slot}
     >
       {undefined}

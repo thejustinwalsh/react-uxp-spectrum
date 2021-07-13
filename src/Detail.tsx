@@ -1,8 +1,8 @@
 import React from 'react';
+import { SpectrumComponentSize, SpectrumComponetDefaults } from './common';
 
 namespace Spectrum {
   export type DetailScript = 'latin' | 'han' | 'arabic' | 'hebrew';
-  export type DetailSize = 'S' | 'M' | 'L' | 'XL';
   export type DetailWeight = 'light' | 'default';
 }
 
@@ -10,7 +10,7 @@ type Props = {
   children?: React.ReactNode;
   className?: string;
   script?: Spectrum.DetailScript;
-  size?: Spectrum.DetailSize;
+  size?: SpectrumComponentSize;
   weight?: Spectrum.DetailWeight;
 };
 
@@ -21,7 +21,7 @@ declare global {
         children?: React.ReactNode;
         class?: string;
         script?: Spectrum.DetailScript;
-        size?: Spectrum.DetailSize;
+        size?: SpectrumComponentSize;
         weight?: Spectrum.DetailWeight;
       };
     }
@@ -41,7 +41,7 @@ export default function Detail(props: Props) {
     <sp-detail
       class={props?.className}
       script={props?.script}
-      size={props?.size}
+      size={props?.size || SpectrumComponetDefaults.defaultSize}
       weight={props?.weight}
     >
       {props?.children}

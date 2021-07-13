@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { SpectrumComponentSize } from './common';
+import { SpectrumComponentSize, SpectrumComponetDefaults } from './common';
 
 namespace Spectrum {
   export type LinkVariant = 'overBackground';
@@ -12,6 +12,7 @@ type Props = {
   href?: string;
   quiet?: boolean;
   variant?: Spectrum.LinkVariant;
+  size?: SpectrumComponentSize;
 };
 
 declare global {
@@ -57,6 +58,7 @@ export default function Link(props: Props) {
       href={props.href}
       quiet={props.quiet || undefined}
       variant={props.variant}
+      size={props?.size || SpectrumComponetDefaults.defaultSize}
     >
       {props.children}
     </sp-link>

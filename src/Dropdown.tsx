@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { SpectrumComponentSize } from './common';
+import { SpectrumComponentSize, SpectrumComponetDefaults } from './common';
 
 namespace Spectrum {
   export interface DropdownEvent extends globalThis.Event {
@@ -16,6 +16,7 @@ type Props = {
   quiet?: boolean;
   placeholder?: string;
   selectedIndex?: number;
+  size?: SpectrumComponentSize;
 };
 
 declare global {
@@ -75,6 +76,7 @@ export default function Dropdown(props: Props) {
       quiet={props.quiet || undefined}
       placeholder={props.placeholder}
       selectedIndex={props.selectedIndex}
+      size={props?.size || SpectrumComponetDefaults.defaultSize}
     >
       {props?.children}
     </sp-dropdown>

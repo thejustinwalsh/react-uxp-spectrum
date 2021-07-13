@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { SpectrumComponentSize } from './common';
+import { SpectrumComponentSize, SpectrumComponetDefaults } from './common';
 
 namespace Spectrum {
   export interface RadioEvent extends globalThis.Event {
@@ -16,6 +16,7 @@ type Props = {
   emphasized?: boolean;
   invalid?: boolean;
   value?: string;
+  size?: SpectrumComponentSize;
 };
 
 declare global {
@@ -66,6 +67,7 @@ export default function Radio(props: Props) {
       emphasized={props?.emphasized || undefined}
       invalid={props.invalid || undefined}
       value={props.value}
+      size={props?.size || SpectrumComponetDefaults.defaultSize}
     >
       {props?.children}
     </sp-radio>
