@@ -1,4 +1,5 @@
 import React from 'react';
+import { SpectrumComponetDefaults } from './common';
 
 namespace Spectrum {
   export type ProgressbarVariant = 'overBackground';
@@ -10,7 +11,7 @@ type Props = {
   className?: string;
   min?: number;
   max: number;
-  size?: Spectrum.ProgressbarSize;
+  size?: SpectrumComponetDefaults;
   showValue?: boolean;
   value: number;
   valueLabel?: string;
@@ -25,7 +26,7 @@ declare global {
         class?: string;
         min?: number;
         max: number;
-        size?: Spectrum.ProgressbarSize;
+        size?: SpectrumComponetDefaults;
         'show-value'?: boolean;
         value: number;
         'value-label'?: string;
@@ -51,11 +52,11 @@ export default function Progressbar(props: Props) {
       class={props.className}
       min={props.min}
       max={props.max}
-      size={props.size}
       show-value={props.showValue || undefined}
       value={props.value}
       value-label={props.valueLabel}
       variant={props.variant}
+      size={props?.size || SpectrumComponetDefaults.defaultSize}
     >
       {props.children}
     </sp-progressbar>

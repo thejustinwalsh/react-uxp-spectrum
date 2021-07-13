@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { SpectrumComponentSize, SpectrumComponetDefaults } from './common';
 
 namespace Spectrum {
   export type TextareaType = 'number' | 'password' | 'search';
@@ -19,6 +20,7 @@ type Props = {
   type?: Spectrum.TextareaType;
   valid?: boolean;
   value?: string;
+  size?: SpectrumComponentSize;
 };
 
 declare global {
@@ -35,6 +37,7 @@ declare global {
         type?: Spectrum.TextareaType;
         valid?: boolean;
         value?: string;
+        size?: SpectrumComponentSize;
       };
     }
   }
@@ -83,6 +86,7 @@ export default function Textarea(props: Props) {
       type={props.type}
       valid={props.valid || undefined}
       value={props.value}
+      size={props?.size || SpectrumComponetDefaults.defaultSize}
     >
       {props?.children}
     </sp-textarea>

@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { SpectrumComponentSize, SpectrumComponetDefaults } from './common';
 
 namespace Spectrum {
   export type SliderFillOffset = 'left' | 'right';
@@ -21,6 +22,7 @@ type Props = {
   value: number;
   valueLabel?: string;
   variant?: Spectrum.SliderVariant;
+  size?: SpectrumComponentSize;
 };
 
 declare global {
@@ -38,6 +40,7 @@ declare global {
         value: number;
         'value-label'?: string;
         variant?: Spectrum.SliderVariant;
+        size?: SpectrumComponentSize;
       };
     }
   }
@@ -87,6 +90,7 @@ export default function Slider(props: Props) {
       value={props.value}
       value-label={props.valueLabel}
       variant={props.variant}
+      size={props?.size || SpectrumComponetDefaults.defaultSize}
     >
       {props?.children}
     </sp-slider>

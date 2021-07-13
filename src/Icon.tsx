@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { SpectrumComponentSize, SpectrumComponetDefaults } from './common';
+
 namespace Spectrum {
   export type IconName =
     | 'ui:AlertMedium'
@@ -39,15 +41,13 @@ namespace Spectrum {
     | 'ui:SuccessSmall'
     | 'ui:TripleGripper';
 
-  export type IconSize = 'xxs' | 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl';
-
   export type IconSlot = 'icon';
 }
 
 type Props = {
   className?: string;
   name?: Spectrum.IconName;
-  size?: Spectrum.IconSize;
+  size?: SpectrumComponentSize;
   slot?: Spectrum.IconSlot;
 };
 
@@ -58,7 +58,7 @@ declare global {
         children: undefined;
         class?: string;
         name?: Spectrum.IconName;
-        size?: Spectrum.IconSize;
+        size?: SpectrumComponentSize;
         slot?: Spectrum.IconSlot;
       };
     }
@@ -78,7 +78,7 @@ export default function Icon(props: Props) {
     <sp-icon
       class={props?.className}
       name={props.name}
-      size={props.size}
+      size={props?.size || SpectrumComponetDefaults.defaultSize}
       slot={props.slot}
     >
       {undefined}

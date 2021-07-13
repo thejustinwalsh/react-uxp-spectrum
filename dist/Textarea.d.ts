@@ -1,4 +1,5 @@
 import React from 'react';
+import { SpectrumComponentSize } from './common';
 declare namespace Spectrum {
     type TextareaType = 'number' | 'password' | 'search';
     interface TextareaEvent extends globalThis.Event {
@@ -19,6 +20,7 @@ declare type Props = {
     type?: Spectrum.TextareaType;
     valid?: boolean;
     value?: string;
+    size?: SpectrumComponentSize;
 };
 declare global {
     namespace JSX {
@@ -34,6 +36,7 @@ declare global {
                 type?: Spectrum.TextareaType;
                 valid?: boolean;
                 value?: string;
+                size?: SpectrumComponentSize;
             };
         }
     }

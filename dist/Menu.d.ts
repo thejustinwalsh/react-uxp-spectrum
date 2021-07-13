@@ -1,4 +1,5 @@
 import React from 'react';
+import { SpectrumComponentSize } from './common';
 declare namespace Spectrum {
     type MenuSlot = 'options';
     interface MenuEvent extends globalThis.Event {
@@ -13,6 +14,7 @@ declare type Props = {
     className?: string;
     slot?: Spectrum.MenuSlot;
     selectedIndex?: number;
+    size?: SpectrumComponentSize;
 };
 declare global {
     namespace JSX {
@@ -21,8 +23,10 @@ declare global {
                 children?: React.ReactNode;
                 ref?: React.RefObject<HTMLElement>;
                 class?: string;
+                onClick?: (e?: React.ChangeEvent<HTMLSelectElement>) => void;
                 slot?: Spectrum.MenuSlot;
                 selectedIndex?: number;
+                size?: SpectrumComponentSize;
             };
         }
     }

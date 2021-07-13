@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { SpectrumComponentSize, SpectrumComponetDefaults } from './common';
 
 namespace Spectrum {
   export type MenuSlot = 'options';
@@ -13,6 +14,7 @@ type Props = {
   className?: string;
   slot?: Spectrum.MenuSlot;
   selectedIndex?: number;
+  size?: SpectrumComponentSize;
 };
 
 declare global {
@@ -22,8 +24,10 @@ declare global {
         children?: React.ReactNode;
         ref?: React.RefObject<HTMLElement>;
         class?: string;
+        onClick?: (e?: React.ChangeEvent<HTMLSelectElement>) => void;
         slot?: Spectrum.MenuSlot;
         selectedIndex?: number;
+        size?: SpectrumComponentSize;
       };
     }
   }
@@ -64,6 +68,7 @@ export default function Menu(props: Props) {
       class={props.className}
       slot={props.slot === 'options' ? 'options' : undefined}
       selectedIndex={props.selectedIndex}
+      size={props?.size || SpectrumComponetDefaults.defaultSize}
     >
       {props.children}
     </sp-menu>

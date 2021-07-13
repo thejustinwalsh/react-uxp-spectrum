@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { SpectrumComponentSize, SpectrumComponetDefaults } from './common';
 
 namespace Spectrum {
   export type ButtonVariant =
@@ -19,6 +20,7 @@ type Props = {
   disabled?: boolean;
   quiet?: boolean;
   variant?: Spectrum.ButtonVariant;
+  size?: SpectrumComponentSize;
 };
 
 declare global {
@@ -31,6 +33,8 @@ declare global {
         disabled?: boolean;
         quiet?: boolean;
         variant?: Spectrum.ButtonVariant;
+        size?: SpectrumComponentSize;
+        onClick?: (e?: any) => void;
       };
     }
   }
@@ -66,6 +70,7 @@ export default function Button(props: Props) {
       disabled={props.disabled || undefined}
       quiet={props.quiet || undefined}
       variant={variant}
+      size={props?.size || SpectrumComponetDefaults.defaultSize}
     >
       {props.children}
     </sp-button>

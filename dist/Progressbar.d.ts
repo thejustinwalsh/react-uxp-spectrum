@@ -1,4 +1,5 @@
 import React from 'react';
+import { SpectrumComponetDefaults } from './common';
 declare namespace Spectrum {
     type ProgressbarVariant = 'overBackground';
     type ProgressbarSize = 'small';
@@ -8,7 +9,7 @@ declare type Props = {
     className?: string;
     min?: number;
     max: number;
-    size?: Spectrum.ProgressbarSize;
+    size?: SpectrumComponetDefaults;
     showValue?: boolean;
     value: number;
     valueLabel?: string;
@@ -22,7 +23,7 @@ declare global {
                 class?: string;
                 min?: number;
                 max: number;
-                size?: Spectrum.ProgressbarSize;
+                size?: SpectrumComponetDefaults;
                 'show-value'?: boolean;
                 value: number;
                 'value-label'?: string;

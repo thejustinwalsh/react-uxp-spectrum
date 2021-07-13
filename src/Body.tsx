@@ -1,9 +1,9 @@
 import React from 'react';
+import { SpectrumComponentSize, SpectrumComponetDefaults } from './common';
 
 namespace Spectrum {
   export type BodyClassification = 'serif' | 'sans serif';
   export type BodyScript = 'latin' | 'han' | 'arabic' | 'hebrew';
-  export type BodySize = 'XS' | 'S' | 'M' | 'L' | 'XL' | 'XXL';
 }
 
 type Props = {
@@ -11,7 +11,7 @@ type Props = {
   className?: string;
   classification?: Spectrum.BodyClassification;
   script?: Spectrum.BodyScript;
-  size?: Spectrum.BodySize;
+  size?: SpectrumComponentSize;
 };
 
 declare global {
@@ -22,7 +22,7 @@ declare global {
         class?: string;
         classification?: Spectrum.BodyClassification;
         script?: Spectrum.BodyScript;
-        size?: Spectrum.BodySize;
+        size?: SpectrumComponentSize;
       };
     }
   }
@@ -42,7 +42,7 @@ export default function Body(props: Props) {
       class={props?.className}
       classification={props?.classification}
       script={props?.script}
-      size={props?.size}
+      size={props?.size || SpectrumComponetDefaults.defaultSize}
     >
       {props?.children}
     </sp-body>

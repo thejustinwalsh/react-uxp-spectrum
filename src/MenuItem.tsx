@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { SpectrumComponentSize, SpectrumComponetDefaults } from './common';
 
 namespace Spectrum {
   export interface MenuItemEvent extends globalThis.Event {
@@ -11,7 +12,10 @@ type Props = {
   onClick?: (e: Spectrum.MenuItemEvent) => void;
   className?: string;
   disabled?: boolean;
+  value?: string;
   selected?: boolean;
+  size?: SpectrumComponentSize;
+  keyCustom?: number | string;
 };
 
 declare global {
@@ -20,9 +24,12 @@ declare global {
       'sp-menu-item': {
         children?: React.ReactNode;
         ref?: React.RefObject<HTMLElement>;
+        key?: string | number;
         class?: string;
         disabled?: boolean;
         selected?: boolean;
+        value?: string;
+        size?: SpectrumComponentSize;
       };
     }
   }
@@ -40,6 +47,7 @@ declare global {
  * </Spectrum.Menu>
  * ```
  */
+
 export default function MenuItem(props: Props) {
   const ref = useRef<HTMLElement>(null);
 
@@ -59,6 +67,9 @@ export default function MenuItem(props: Props) {
       class={props.className}
       disabled={props.disabled || undefined}
       selected={props.selected || undefined}
+      value={props.value}
+      size={props?.size || SpectrumComponetDefaults.defaultSize}
+      key={props?.keyCustom}
     >
       {props.children}
     </sp-menu-item>

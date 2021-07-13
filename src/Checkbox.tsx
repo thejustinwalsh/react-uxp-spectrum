@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { SpectrumComponentSize, SpectrumComponetDefaults } from './common';
 
 namespace Spectrum {
   export interface CheckboxEvent extends globalThis.Event {
@@ -15,6 +16,7 @@ type Props = {
   disabled?: boolean;
   indeterminate?: boolean;
   invalid?: boolean;
+  size?: SpectrumComponentSize;
 };
 
 declare global {
@@ -28,6 +30,8 @@ declare global {
         disabled?: boolean;
         indeterminate?: boolean;
         invalid?: boolean;
+        size?: SpectrumComponentSize;
+        onClick?: (e?: any) => void;
       };
     }
   }
@@ -72,6 +76,7 @@ export default function Checkbox(props: Props) {
       disabled={props?.disabled || undefined}
       indeterminate={props?.indeterminate || undefined}
       invalid={props.invalid || undefined}
+      size={props?.size || SpectrumComponetDefaults.defaultSize}
     >
       {props?.children}
     </sp-checkbox>

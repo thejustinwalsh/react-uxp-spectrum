@@ -1,14 +1,14 @@
 import React from 'react';
+import { SpectrumComponentSize } from './common';
 declare namespace Spectrum {
     type DetailScript = 'latin' | 'han' | 'arabic' | 'hebrew';
-    type DetailSize = 'S' | 'M' | 'L' | 'XL';
     type DetailWeight = 'light' | 'default';
 }
 declare type Props = {
     children?: React.ReactNode;
     className?: string;
     script?: Spectrum.DetailScript;
-    size?: Spectrum.DetailSize;
+    size?: SpectrumComponentSize;
     weight?: Spectrum.DetailWeight;
 };
 declare global {
@@ -18,7 +18,7 @@ declare global {
                 children?: React.ReactNode;
                 class?: string;
                 script?: Spectrum.DetailScript;
-                size?: Spectrum.DetailSize;
+                size?: SpectrumComponentSize;
                 weight?: Spectrum.DetailWeight;
             };
         }

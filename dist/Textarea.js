@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { SpectrumComponetDefaults } from './common';
 /**
  * Renders a text area with optional associated {@link Spectrum.Label}.
  * @example
@@ -28,6 +29,6 @@ export default function Textarea(props) {
             (_a = ref.current) === null || _a === void 0 ? void 0 : _a.removeEventListener('input', dispatchInput);
         };
     }, [props.onInput]);
-    return (React.createElement("sp-textarea", { ref: ref, "class": props.className, disabled: props.disabled || undefined, invalid: props.invalid || undefined, placeholder: props.placeholder, quiet: props.quiet || undefined, type: props.type, valid: props.valid || undefined, value: props.value }, props === null || props === void 0 ? void 0 : props.children));
+    return (React.createElement("sp-textarea", { ref: ref, "class": props.className, disabled: props.disabled || undefined, invalid: props.invalid || undefined, placeholder: props.placeholder, quiet: props.quiet || undefined, type: props.type, valid: props.valid || undefined, value: props.value, size: (props === null || props === void 0 ? void 0 : props.size) || SpectrumComponetDefaults.defaultSize }, props === null || props === void 0 ? void 0 : props.children));
 }
 //# sourceMappingURL=Textarea.js.map

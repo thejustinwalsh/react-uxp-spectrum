@@ -1,4 +1,5 @@
 import React from 'react';
+import { SpectrumComponentSize } from './common';
 declare namespace Spectrum {
     interface CheckboxEvent extends globalThis.Event {
         readonly target: (EventTarget & {
@@ -15,6 +16,7 @@ declare type Props = {
     disabled?: boolean;
     indeterminate?: boolean;
     invalid?: boolean;
+    size?: SpectrumComponentSize;
 };
 declare global {
     namespace JSX {
@@ -27,6 +29,8 @@ declare global {
                 disabled?: boolean;
                 indeterminate?: boolean;
                 invalid?: boolean;
+                size?: SpectrumComponentSize;
+                onClick?: (e?: any) => void;
             };
         }
     }

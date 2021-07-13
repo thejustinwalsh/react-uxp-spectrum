@@ -1,4 +1,5 @@
 import React from 'react';
+import { SpectrumComponentSize, SpectrumComponetDefaults } from './common';
 
 namespace Spectrum {
   export type LabelSlot = 'label';
@@ -9,6 +10,7 @@ type Props = {
   className?: string;
   slot?: Spectrum.LabelSlot;
   isRequired?: boolean;
+  size?: SpectrumComponentSize;
 };
 
 declare global {
@@ -19,6 +21,7 @@ declare global {
         class?: string;
         slot?: Spectrum.LabelSlot;
         isrequired?: boolean;
+        size?: SpectrumComponentSize;
       };
     }
   }
@@ -41,6 +44,7 @@ export default function Label(props: Props) {
       class={props?.className}
       slot={props?.slot || undefined}
       isrequired={props?.isRequired || undefined}
+      size={props?.size || SpectrumComponetDefaults.defaultSize}
     >
       {props?.children}
     </sp-label>

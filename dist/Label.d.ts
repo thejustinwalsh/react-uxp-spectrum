@@ -1,4 +1,5 @@
 import React from 'react';
+import { SpectrumComponentSize } from './common';
 declare namespace Spectrum {
     type LabelSlot = 'label';
 }
@@ -7,6 +8,7 @@ declare type Props = {
     className?: string;
     slot?: Spectrum.LabelSlot;
     isRequired?: boolean;
+    size?: SpectrumComponentSize;
 };
 declare global {
     namespace JSX {
@@ -16,6 +18,7 @@ declare global {
                 class?: string;
                 slot?: Spectrum.LabelSlot;
                 isrequired?: boolean;
+                size?: SpectrumComponentSize;
             };
         }
     }

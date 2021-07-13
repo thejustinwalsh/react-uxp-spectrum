@@ -1,4 +1,5 @@
 import React from 'react';
+import { SpectrumComponentSize } from './common';
 declare namespace Spectrum {
     type SliderFillOffset = 'left' | 'right';
     type SliderVariant = 'filled';
@@ -21,6 +22,7 @@ declare type Props = {
     value: number;
     valueLabel?: string;
     variant?: Spectrum.SliderVariant;
+    size?: SpectrumComponentSize;
 };
 declare global {
     namespace JSX {
@@ -37,6 +39,7 @@ declare global {
                 value: number;
                 'value-label'?: string;
                 variant?: Spectrum.SliderVariant;
+                size?: SpectrumComponentSize;
             };
         }
     }

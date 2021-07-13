@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { SpectrumComponentSize, SpectrumComponetDefaults } from './common';
 
 namespace Spectrum {
   export interface ActionButtonEvent extends globalThis.Event {
@@ -12,6 +13,7 @@ type Props = {
   className?: string;
   disabled?: boolean;
   quiet?: boolean;
+  size?: SpectrumComponentSize;
 };
 
 declare global {
@@ -23,6 +25,7 @@ declare global {
         class?: string;
         disabled?: boolean;
         quiet?: boolean;
+        size?: SpectrumComponentSize;
       };
     }
   }
@@ -58,6 +61,7 @@ export default function ActionButton(props: Props) {
       class={props?.className}
       disabled={props?.disabled || undefined}
       quiet={props?.quiet || undefined}
+      size={props?.size || SpectrumComponetDefaults.defaultSize}
     >
       {props?.children}
     </sp-action-button>

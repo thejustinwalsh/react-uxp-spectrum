@@ -1,4 +1,5 @@
 import React from 'react';
+import { SpectrumComponentSize } from './common';
 declare namespace Spectrum {
     type LinkVariant = 'overBackground';
 }
@@ -9,6 +10,7 @@ declare type Props = {
     href?: string;
     quiet?: boolean;
     variant?: Spectrum.LinkVariant;
+    size?: SpectrumComponentSize;
 };
 declare global {
     namespace JSX {
@@ -20,6 +22,7 @@ declare global {
                 href?: string;
                 quiet?: boolean;
                 variant?: Spectrum.LinkVariant;
+                size?: SpectrumComponentSize;
             };
         }
     }
