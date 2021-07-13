@@ -20,6 +20,7 @@ import RadioGroup from './RadioGroup';
 import Slider from './Slider';
 import Textarea from './Textarea';
 import Textfield from './Textfield';
+import { SpectrumComponetDefaults } from './common';
 var Spectrum = {
     Body: Body,
     Detail: Detail,
@@ -40,8 +41,9 @@ var Spectrum = {
     RadioGroup: RadioGroup,
     Slider: Slider,
     Textarea: Textarea,
-    Textfield: Textfield
+    Textfield: Textfield,
+    SpectrumComponetDefaults: SpectrumComponetDefaults
 };
-export { Body, Detail, Heading, Label, ActionButton, Button, Checkbox, Divider, Dropdown, Icon, Link, Progressbar, Radio, RadioGroup, Slider, Textarea, Textfield, };
+export { Body, Detail, Heading, Label, ActionButton, Button, Checkbox, Divider, Dropdown, Icon, Link, Progressbar, Radio, RadioGroup, Slider, Textarea, Textfield, SpectrumComponetDefaults, };
 export default Spectrum;
 //# sourceMappingURL=index.js.map

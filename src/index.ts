@@ -20,6 +20,7 @@ import RadioGroup from './RadioGroup';
 import Slider from './Slider';
 import Textarea from './Textarea';
 import Textfield from './Textfield';
+import { SpectrumComponetDefaults } from './common';
 
 const Spectrum = {
   Body,
@@ -42,6 +43,7 @@ const Spectrum = {
   Slider,
   Textarea,
   Textfield,
+  SpectrumComponetDefaults,
 };
 
 export {
@@ -62,6 +64,7 @@ export {
   Slider,
   Textarea,
   Textfield,
+  SpectrumComponetDefaults,
 };
 
 export default Spectrum;

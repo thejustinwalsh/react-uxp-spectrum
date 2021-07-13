@@ -18,6 +18,7 @@ import RadioGroup from './RadioGroup';
 import Slider from './Slider';
 import Textarea from './Textarea';
 import Textfield from './Textfield';
+import { SpectrumComponetDefaults } from './common';
 declare const Spectrum: {
     Body: typeof Body;
     Detail: typeof Detail;
@@ -39,6 +40,7 @@ declare const Spectrum: {
     Slider: typeof Slider;
     Textarea: typeof Textarea;
     Textfield: typeof Textfield;
+    SpectrumComponetDefaults: typeof SpectrumComponetDefaults;
 };
-export { Body, Detail, Heading, Label, ActionButton, Button, Checkbox, Divider, Dropdown, Icon, Link, Progressbar, Radio, RadioGroup, Slider, Textarea, Textfield, };
+export { Body, Detail, Heading, Label, ActionButton, Button, Checkbox, Divider, Dropdown, Icon, Link, Progressbar, Radio, RadioGroup, Slider, Textarea, Textfield, SpectrumComponetDefaults, };
 export default Spectrum;
