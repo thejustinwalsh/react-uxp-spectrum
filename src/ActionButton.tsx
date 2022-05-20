@@ -12,6 +12,7 @@ type Props = {
   className?: string;
   disabled?: boolean;
   quiet?: boolean;
+  title?: string;
 };
 
 declare global {
@@ -23,6 +24,7 @@ declare global {
         class?: string;
         disabled?: boolean;
         quiet?: boolean;
+        title?: string;
       };
     }
   }
@@ -58,6 +60,7 @@ export default function ActionButton(props: Props) {
       class={props?.className}
       disabled={props?.disabled || undefined}
       quiet={props?.quiet || undefined}
+      title={props?.title || undefined}
     >
       {props?.children}
     </sp-action-button>
