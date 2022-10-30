@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { SpectrumComponentSize, SpectrumComponetDefaults } from './common';
 
 namespace Spectrum {
-  export type TextfieldType = 'number' | 'password' | 'search';
+  export type TextfieldType = 'number' | 'password' | 'search' | 'text';
   export interface TextfieldEvent extends globalThis.Event {
     readonly target: (EventTarget & { value: string }) | null;
   }
@@ -30,6 +30,8 @@ declare global {
         children?: React.ReactNode;
         ref?: React.RefObject<HTMLElement>;
         class?: string;
+        onInput?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+        onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
         disabled?: boolean;
         invalid?: boolean;
         placeholder?: string;
